@@ -1,0 +1,161 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/IneqMeas]{subfiles}
+\onlyinsubfile{\externaldocument{IneqMeas}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\addcontentsline{toc}{section}{Appendices} % label the section  Appendices 
+
+\hypertarget{Appendices}{} % Allows link to [url-of-paper]#Appendices
+\ifthenelse{\boolean{Web}}{}{% Web version has no page headers
+  \chead[Appendices]{Appendices}      % but PDF version does
+  \appendixpage % Reset formatting for appendices
+} 
+
+\section{Proofs}
+\notinsubfile{\label{app:DF_R}}
+
+\subsection{Proposition 1}
+
+$\rightarrow$
+
+\begin{proof}
+
+	\par First, consider the relevant objects from the Anscombe-Aumann expected utility representation theorem, for which the Gilboa and Schmeidler (1989) theorem is an extension of (referred to as GS from here on out):
+	
+	$$ L = \bigg\{ p: Y \mapsto [0,1] \hspace{2mm} \bigg| \# \hspace{2mm} \{y|p(y)>0\} < \infty, \sum_{y \in Y} p(y) =1  \bigg\}. $$
+
+
+	\par Where $L$ is the choice set from the vNM-EU model, and $F$ is from the GS-EU set-up. First, recall the GS-EU theorem:
+
+\begin{tm}
+$\succsim $ satisfies AA1, AA2, C-Independence, AA4, AA5, and Uncertainty aversion if and only if there exists a closed and convex set of probabilities on $S$, $C \subset \Delta(S)$, and a non-constant function $U: Y \to \mathbb{R}$ such that, for every $f, f^* \in F,$
+$$ f \succsim f^* \iff \min_{\lambda \in \Delta(S)} \int_{S} (\mathbb{E}_{p(s)} u) d \lambda  \geq \min_{\lambda \in \Delta(S)} \int_{S} (\mathbb{E}_{p^{*}(s)} u) d \lambda.$$
+\end{tm}
+
+$$	\iff  \min_{\lambda \in \Delta(S)} \int_{S} \int_{0}^{\bar{y}} U(y)p(s)(y) dy d \lambda \geq  \min_{\lambda \in \Delta(S)} \int_{S} \int_{0}^{\bar{y}} U(y)p^{*}(s)(y) dy  d \lambda $$
+
+	\par For simplicity, consider the discrete version of the implication of this expected utility representation result. Namely,
+
+$$  \iff  \min_{\lambda \in \Delta(S)} \sum_{S} \sum_{y \in Y} U(y)p(s)(y) \lambda(s) \geq  \min_{\lambda \in \Delta(S)} \sum_{S} \sum_{y \in Y} U(y)p^{*}(s)(y) \lambda(s).   $$
+
+	\par The key observation in this proof can be observed upon fixing some state $s' \in S$. By the definition of an act $f \in F$, for each $f(w)=p(s')(y)$ can be written as $P(y) \in L$. Thus, denote \underbar{$\lambda$} as the value of $\lambda \in \Delta(S)$ that minimizes  $\sum_{S} \sum_{y \in Y} U(y)p(s)(y)$. Then,
+	
+$$  f \succsim f^* \iff  \sum_{S} \sum_{y \in Y} U(y)p(s)(y) \underbar{$\lambda$}(s) \geq  \sum_{S} \sum_{y \in Y} U(y)p^{*}(s)(y) \underbar{$\lambda$}(s).   $$
+
+	\par But we know that the vNM-EU representation is unique up to positive, affine (linear) transformations! That is,
+	
+$$  \sum_{S} \sum_{y \in Y} U(y)p(s)(y) \underbar{$\lambda$}(s) \geq  \sum_{S} \sum_{y \in Y} U(y)p^{*}(s)(y) \underbar{$\lambda$}(s) \iff \sum_{S} \sum_{y \in Y} U(y)p(s)(y) \geq  \sum_{S} \sum_{y \in Y} U(y)p^{*}(s)(y).$$	
+
+	\par Finally, use the previous observation and rewrite the above expression as
+	
+$$  \sum_{y \in Y} U(y)P(y) \geq \sum_{y \in Y} U(y)P^*(y).$$	
+
+	\par Thus, we see that the problem has been reduced to the case of Atkinson (1970)\footnote{I've switched the notation from $F$ to $P$, since the objective-subjective uncertainty literature using the former to define the set of acts.}, where thee condition permitting a partial order on income frequency distributions is given by
+	
+\begin{prop}
+A distribution $f(y)$ will be preferred to another distribution $f^{*}(y)$ according to $W$ for all $U(y) (U' > 0, U'' \leq 0)$ if and only if
+
+$$ \int_{0}^{x} [F(y) -F^{*}(y)]dy \leq 0 \text{\hspace{2mm} for all $z$, \hspace{2mm} $0 \leq z \leq \bar{y}$} $$  
+
+and 
+
+$$F(y) \neq F^{*}(y) \text{\hspace{2mm} for some $y$,}$$
+
+where $F(y) = \int_{0}^{y} f(y)dy. $
+\end{prop}
+	
+	\par Thus, the second order dominance result must hold in each state $s' \in S$ for the partial ranking over wealth distributions to be achieved. 
+	
+\end{proof}	
+
+$\leftarrow$
+
+\begin{proof}
+
+	\par Suppose that $\{ p_s(y) \}_{s \in S}$ is ordered by S.O.S.D, for all $s \in S$. Fix a state $s' \in S$. Then, for all $y \in (0, \bar{y})$,
+	
+$$  \iff  \min_{\lambda \in \Delta(S)} \int_{S} \int_{0}^{\bar{y}} U(y)p(s)(y) dy d \lambda \geq  \min_{\lambda \in \Delta(S)} \int_{S} \int_{0}^{\bar{y}} U(y)p^{*}(s)(y) dy  d \lambda. $$
+	
+	\par A key observation is that $\lambda(s)$ is a probability measure over the state space $S$. Consequently, the double-expectation 
+	
+$$ \mathbb{E}_{\lambda} \bigg( \mathbb{E}_{p(s)} u \bigg) $$
+
+	\par is linear in the probabilities $(\lambda(s_1), \lambda(s_2), \ldots, \lambda(s_n)) = \lambda \in \Delta(S)$. In other words, the preferences represented by the \say{inner expectation} will be \textit{invariant to linear (monotone) transformations}. Thus, $\forall \lambda \in \Delta(S)$,
+	
+$$ \int_{S} \int_{0}^{\bar{y}} U(y)p(s)(y) dy d \lambda \geq \int_{S} \int_{0}^{\bar{y}} U(y)p^*(s)(y) dy d \lambda.$$	
+
+$$  \int_{0}^{\bar{y}} U(y)p(s)(y) dy  \geq \int_{0}^{\bar{y}} U(y)p^*(s)(y) dy .$$	
+	
+	\par Next, we can exploit the \say{change of variable} seen in the proof of the \say{$\rightarrow$} direction, which was permitted upon fixing a particular state $s' \in S$:
+	
+$$ \iff \int_{0}^{\bar{y}} U(y)p(y) dy \geq \int_{0}^{\bar{y}} U(y)p^*(y) dy  $$	
+
+	\par for all $y \in [0, \bar{y}]$, by the S.O.S.D. result, where $U(y)$ such that $U(y) (U' > 0, U'' \leq 0)$. To see the argument, first consider the \say{double} integration by parts procedure:
+	
+$$ \int_{0}^{\bar{y}} U(y)p(y) = U(y)p(y) \bigg|_{0}^{\bar{y}} - \int_{0}^{\bar{y}} U'(y) P(y) dy = U(\bar{y}) - \int_{0}^{\bar{y}} U'(y) P(y) dy .$$	
+	
+	\par And the second round of IBP, define $\hat{P}(y) = \int_{0}^{\bar{y}} P(y)dy$:
+	
+$$ = U(\bar{y}) - \bigg|_{0}^{\bar{y}} U'(y) P(y) dy + \int_{0}^{\bar{y}} U''(y) \hat{P}(y) dy = U(\bar{y}) - U'(\bar{y}) \hat{P}(\bar{y}) + \int_{0}^{\bar{y}} U''(y) \hat{P}(y) dy.$$	
+
+	\par With this expression at our disposal, return to the S.O.S.D assumption on the family of wealth distributions, given we fix some state $s' \in S$:
+	
+$$ \iff \int_{0}^{\bar{y}} U(y)p(y) dy - \int_{0}^{\bar{y}} U(y)p^*(y) dy  \geq 0 $$	
+
+$$ \iff [ U(\bar{y}) - U'(\bar{y}) \hat{P}(\bar{y}) + \int_{0}^{\bar{y}} U''(y) \hat{P}(y) dy ] - [ U(\bar{y}) - U'(\bar{y}) \hat{P^{*}}(\bar{y}) + \int_{0}^{\bar{y}} U''(y) \hat{P^{*}}(\bar{y}) dy ]  \geq 0$$
+
+$$ \iff U'(\bar{y})[\hat{P^{*}}(y) -\hat{P}(\bar{y})] + \int_{0}^{\bar{y}} U''(y) [  \hat{P}(\bar{y}) - \hat{P^{*}}(\bar{y}) ] dy \geq 0$$	
+
+\par Notice that $\hat{P}(\bar{y})\succsim_{S.O.S.D} \hat{P^{*}}(\bar{y}) $ if and only if $\hat{P}(\bar{y}) < \hat{P^{*}}(\bar{y}) $ for all $y \in (0, \bar{y})$ and $\hat{P}(\bar{y})$ = $\hat{P^{*}}(\bar{y})$ when $y=0$ and $y=1$.
+
+\par We now ask: \textbf{When is the previous expression greater than or equal to 0?}
+
+\par Clearly, when $U''(y) =0$, by S.O.S.D. Next, suppose that $U'' < 0$. Then, the term
+	
+$$ \int_{0}^{\bar{y}} U''(y)\bigg[  \hat{P}(\bar{y}) - \hat{P^{*}}(\bar{y}) \bigg] dy > 0,$$	
+	
+\par by S.O.S.D., and the term
+	
+$$  U'(\bar{y})[\hat{P^{*}}(y) -\hat{P}(\bar{y})] \geq 0,$$
+
+	\par also by S.O.S.D. But this must hold for any state $s' \in S$. Thus, we have established that
+	
+$$ p(s)(y) \succsim p^{*}(s)(y) \iff f(w) \succsim f^{*}(w),$$
+
+	\par $f,f^{*} \in F.$	 	
+
+
+\end{proof}
+
+
+
+\end{document}	
+	
+
+
+
+Figure~\ref{fig:LorenzPts_robustness_R} shows the fit of the liquid wealth distribution for interest rates of $0.5$ percent and $1.5$ percent per quarter. In both cases, the estimation exactly matches the median liquid wealth to permanent income ratios for each education group listed in Panel~B of Table~\ref{tab:estimBetas}. 
+
+% \begin{table}{th}
+%   \begin{center}
+%     \begin{tabular}{lccc}
+        %         \multicolumn{4}{l}{Panel (B) Estimation targets} \\ \midrule
+        %         & Dropout & Highschool & College \\ \midrule
+        %         Median LW/PI (data) & 4.64 & 30.2 & 112.8 \\ 
+        %         Median LW/PI (model, $R = 1.005$) & 4.64 & 30.2 & 112.8 \\	
+        %         Median LW/PI (model, $R = 1.01$) & 4.64 & 30.2 & 112.8 \\
+        %         Median LW/PI (model, $R = 1.015$) & 4.64 & 30.2 & 112.8 \\ \bottomrule
+        %       \end{tabular} \\ \\ 
+        %         \end{center}	
+        %         \end{table}
+
+\begin{figure}[th]
+  \begin{center}
+    \includegraphics[width=.9\textwidth]{\econtexRoot/Figures/LorenzPoints_robustness_R.pdf}
+    \caption{Distributions of liquid wealth within each educational group and for the whole population from the 2004 Survey of Consumer Finance and from the estimated model for different values of the interest rate, $R$.}
+    \notinsubfile{\label{fig:LorenzPts_robustness_R}}
+  \end{center}
+\end{figure}
+
+\end{document}	

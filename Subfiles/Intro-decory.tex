@@ -1,0 +1,31 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/IneqMeas]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/IneqMeas}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\hypertarget{Introduction}{}
+\section{Introduction}\notinsubfile{\label{sec:intro}}
+\setcounter{page}{0}\pagenumbering{arabic}
+
+
+\par The distribution of outcomes such as income and wealth among individuals in a society are of interest not only to economists, but to those interested in social welfare and inequality. As \cite{ch83} notes, the literature on inequality notably connects four distinct concepts; (i) measures of inequality, (ii) social welfare functions, (iii) mean values, and (iv) models of choice under uncertainty.
+
+\par Measures of inequality, such as the variance and the coefficient of variation, represent the traditionally statistical approach to characterizing inequality in a society. Almost a century ago, \cite{hd20} suggested that a given measure of inequality would correspond to a social welfare function. This can be gleaned from the fact that different measures of inequality produce different rankings over distributions.
+
+\par The contribution of \cite{aa70} is two-fold. First, he provides a theoretical foundation for ranking distributions and a notion of income inequality aversion by connecting results from the choice under risk literature with Dalton's observation of underlying social welfare functions. Although not explicitly stated, he later proposes an inequality measure which highlights the connection between measures and quasilinear mean values. This is done through the use of an analogy to certainty equivalence from the choice under risk literature.
+
+\par This literature is almost exclusively interested in characterizing inequality in the distribution of income. In the papers that claim to refer to wealth inequality, there is no \say{true} distinction, since the underlying choice under uncertainty model used only incorporates objective uncertainty. With potential interest in describing economic inequality with socially relevant components, such as racial inequality in the U.S., one may wish to make a non-trivial distinction between income and wealth inequality. The motivation for this distinction may be supported by abstraction and reasoning or by analyzing empirical observations.
+
+\par This paper will assume that this distinction is reasonably motivated and defended a-priori. The goal of this paper is to produce an alternative measure inequality in the distribution of wealth using this \say{social welfare approach} to be compared to conventional summary statistics of racial wealth inequality, such as the black-white median wealth gap. This is achieved by exploiting connections between the aforementioned distinct concepts. First, I make use of an analogy between uncertainty aversion and wealth inequality aversion through specifications on the underlying social welfare function in a choice under objective-subjective uncertainty model. From there, I propose a familiar equally distributed measure which is a quasilinear-mean model of representative wealth.
+
+\par The paper will proceed as follows. In section 2, I give the explicit formulation of the connection between the four concepts in the context of income inequality. Section 3 provides a number of arguments for the distinction between characterizing income and wealth inequality using these distinct concepts. Sections 4-7 will cover each of these concepts for the distribution of wealth in the following order: choice under objective-subjective uncertainty, social welfare functions, measures of (wealth) inequality, and mean values. Section 8 concludes the analysis with a brief discussion on an empirical application of these efforts. A short proof of the singular proposition of the paper is given in the appendix.
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

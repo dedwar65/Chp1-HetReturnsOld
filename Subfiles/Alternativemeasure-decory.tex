@@ -1,0 +1,87 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/IneqMeas]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/IneqMeas}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\onlyinsubfile{\setcounter{section}{5}}
+\section{Proposing an alternative measure of inequality}
+\notinsubfile{\label{sec:Altmeasure}}
+
+
+\par The ranking over wealth distributions via specifications on $U(y)$ will allow us to propose measures of inequality. To see the novelty in this \say{social welfare approach}, notice that measures of inequality are generally statistical objects. Namely, the variance, coefficient of variation, and mean deviation are each calculated using collected data on the distribution of an outcome such as income or wealth.
+
+\par Consider one plausible inequality measure: given some present distribution $f(w) = p(s)(y)$, the \textit{the ratio between the level of social welfare evaluated at $p(s)(y)$ and the level of social welfare if everyone had the same level of wealth.} Formally,
+
+$$ D' = \frac{\min_{\lambda \in \Delta(s)} \int_{S} \int_{0}^{\bar{y}} U(y) p(s)(y) dyd\lambda }{U(\mu)}.$$ 
+
+\par However, since this measure is not invariant with respect to linear (monotone) transformations on $U(y)$, it is possible for two decision-makers to agree on the ranking between two distributions but characterize the level of inequality between the two differently.\footnote{As show by \cite{hd20}  and others.}
+
+\subsection{The equally distributed equivalent measure of inequality}
+
+\par To propose an inequality measure without this undesirable property, we consider the following definition.
+
+\begin{dfn}
+The equally distributed equivalent level of wealth $w_{EDE}$ is the level of wealth each person should receive such that, and equal distribution at this level of wealth per head gives the same level of social welfare as the present distribution $f(w) = p(s)(y)$, that is,
+
+$$ U(w_{EDE}) \int_S \int_{0}^{\bar{y}} p(s)(y) dyds = \min_{\lambda \in \Delta(S)} \int_{S} \int_{0}^{\bar{y}} U(y)p(s)(y)dyd\lambda.$$
+\end{dfn}
+
+\par Indeed, I present the \textit{equally distributed equivalent inequality measure}:
+
+$$ I' = 1 - \frac{w_{EDE}}{\mu}. $$
+
+\par Note that this measure no longer depends on the units of measurement regarding the distribution of wealth. The measure will return a number in the interval $[0,1]$ which will be associated with how far the current distribution is from the distribution that gives everyone the same level of wealth.
+
+\subsection{Reaching the mean-independent, equally distributed inequality measure}
+ 
+\par Using the specification on the social welfare function so that it represents preferences satisfying homotheticity found in \textcolor{red}{2}, one may derive the following expression for the equally distributed equivalent level of wealth:
+
+$$ w_{EDE} = \bigg[ \bigg(\frac{1-\epsilon}{B}\bigg) \frac{\min_{\lambda \in \Delta(S)}  \int_{S} \int_{0}^{\bar{y}} A + B \frac{y^{1-\epsilon}}{1-\epsilon} p(s)(y) dy d\lambda - A   }{\int_S \int_{0}^{\bar{y}} p(s)(y) dy ds } \bigg]. $$
+
+\par Finally, we may present the equally distributed measure of wealth inequality, which retains the mean-independence property that many of the conventional summary statistics of inequality possess:
+
+$$ I' = 1 - \bigg( \frac{1 - \epsilon}{B \mu^{\frac{1}{1-\epsilon}}} \bigg)^{1-\epsilon}  \bigg[ \frac{\min_{\lambda \in \Delta(S)}  \int_{S} \int_{0}^{\bar{y}} A + B \frac{y^{1-\epsilon}}{1-\epsilon} p(s)(y) dy d\lambda - A   }{\int_S \int_{0}^{\bar{y}} p(s)(y) dy ds } \bigg].$$
+\par The ranking over wealth distributions via specifications on $U(y)$ will allow us to propose measures of inequality. To see the novelty in this \say{social welfare approach}, notice that measures of inequality are generally statistical objects. Namely, the variance, coefficient of variation, and mean deviation are each calculated using collected data on the distribution of an outcome such as income or wealth.
+
+\par Consider one plausible inequality measure: given some present distribution $f(w) = p(s)(y)$, the \textit{the ratio between the level of social welfare evaluated at $p(s)(y)$ and the level of social welfare if everyone had the same level of wealth.} Formally,
+
+$$ D' = \frac{\min_{\lambda \in \Delta(s)} \int_{S} \int_{0}^{\bar{y}} U(y) p(s)(y) dyd\lambda }{U(\mu)}.$$ 
+
+\par However, since this measure is not invariant with respect to linear (monotone) transformations on $U(y)$, it is possible for two decision-makers to agree on the ranking between two distributions but characterize the level of inequality between the two differently.
+
+\subsection{The equally distributed equivalent measure of inequality}
+
+\par To propose an inequality measure without this undesirable property, we consider the following definition.
+
+\begin{dfn}
+The equally distributed equivalent level of wealth $w_{EDE}$ is the level of wealth each person should receive such that, and equal distribution at this level of wealth per head gives the same level of social welfare as the present distribution $f(w) = p(s)(y)$, that is,
+
+$$ U(w_{EDE}) \int_S \int_{0}^{\bar{y}} p(s)(y) dyds = \min_{\lambda \in \Delta(S)} \int_{S} \int_{0}^{\bar{y}} U(y)p(s)(y)dyd\lambda.$$
+\end{dfn}
+
+\par Indeed, I present the \textit{equally distributed equivalent inequality measure}:
+
+$$ I' = 1 - \frac{w_{EDE}}{\mu}. $$
+
+\par Note that this measure no longer depends on the units of measurement regarding the distribution of wealth. The measure will return a number in the interval $[0,1]$ which will be associated with how far the current distribution is from the distribution that gives everyone the same level of wealth.
+
+\subsection{Reaching the mean-independent, equally distributed inequality measure}
+ 
+\par Using the specification on the social welfare function so that it represents preferences satisfying homotheticity found in \textcolor{red}{2}, one may derive the following expression for the equally distributed equivalent level of wealth:
+
+$$ w_{EDE} = \bigg[ \bigg(\frac{1-\epsilon}{B}\bigg) \frac{\min_{\lambda \in \Delta(S)}  \int_{S} \int_{0}^{\bar{y}} A + B \frac{y^{1-\epsilon}}{1-\epsilon} p(s)(y) dy d\lambda - A   }{\int_S \int_{0}^{\bar{y}} p(s)(y) dy ds } \bigg]. $$
+
+\par Finally, we may present the equally distributed measure of wealth inequality, which retains the mean-independence property that many of the conventional summary statistics of inequality possess:
+
+$$ I' = 1 - \bigg( \frac{1 - \epsilon}{B \mu^{\frac{1}{1-\epsilon}}} \bigg)^{1-\epsilon}  \bigg[ \frac{\min_{\lambda \in \Delta(S)}  \int_{S} \int_{0}^{\bar{y}} A + B \frac{y^{1-\epsilon}}{1-\epsilon} p(s)(y) dy d\lambda - A   }{\int_S \int_{0}^{\bar{y}} p(s)(y) dy ds } \bigg].$$
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

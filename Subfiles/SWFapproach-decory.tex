@@ -1,0 +1,61 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/IneqMeas]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/IneqMeas}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\onlyinsubfile{\setcounter{section}{4}}
+\section{The social welfare approach to ranking wealth distributions}
+\notinsubfile{\label{sec:SWFapproach}}
+
+\subsection{Partial ranking over wealth distributions}
+
+\par From here, I assume that the function $U: Y \mapsto \mathbb{R} $ is an increasing and concave function. Again, we seek the conditions for which a ranking over wealth distributions can be achieved without any further specifications on $U(y)$.
+
+\par A key observation is that the assumption on the functional form of the wealth distribution $f(w) = p(s)(y)$ implicitly suggests that the objects of interest are a family of distributions $p(y) \in L$, indexed by elements of the state space $s \in S$, or:
+
+$$\{ p_s(y) \}_{s \in S}.$$
+
+\par Thus, we may view each act $f \in F$ as a \say{state-contingent frequency distribution}. Moreover, upon fixing a state $s' \in S$, the analysis will become identical to the use of the choice under objective uncertainty model that was used to reach a ranking over income frequency distributions. 
+
+\par Recall that the second-order stochastic dominance result was necessary and sufficient to reach a partial ordering over income distributions. Consider the following proposition below which extends this result to a partial ordering over wealth distributions for the most general class of social welfare functions $U(y)$.
+
+\begin{prop}
+A distribution $p(s)(y)$ will be preferred to another distribution $p^{*}(s)(y)$ according to $W'$ for all $U(y) (U' > 0, U'' \leq 0)$ if and only if, $\forall s' \in S$,
+$$ \int_{0}^{x} [P(s')(y) -P^{*}(s')(y)]dy \leq 0 \text{\hspace{2mm} for all $z$, \hspace{2mm} $0 \leq z \leq \bar{y}$} $$  
+
+and 
+
+$$ P(s')(y) \neq P^{*}(y) \text{\hspace{2mm} for some $y$,}$$
+
+where $P(s')(y) = \int_{0}^{y} p(s')(y)dy. $
+\end{prop}
+
+\par The proof can be found in the Appendix.
+
+\subsection{Complete ranking over wealth distributions}
+
+\par To reach our complete ordering over wealth distribution, we must guarantee that $U(y)$ is specified up to a linear (monotonic) transformation. Work done by \cite{rklm81} extending the notion of relative risk aversion results to the case of \say{multidimensional commodities} implies that the restriction we are after is the class of social welfare functions representing homothetic preferences. That is,
+
+\begin{equation}
+U(y) = 
+	\begin{cases}
+	A + B \frac{y^{1-\epsilon}}{1-\epsilon}, & \epsilon \neq 1\\
+	\ln(y), & \epsilon =1
+	\end{cases}
+\end{equation}
+
+\par where $\epsilon \geq 0$ is required to preserve concavity of $U(y)$. 
+
+\par It is well-know that, in the risk and risk aversion literature, this functional form is associated with the class of utility functions representing constant relative risk averse (CRRA) and decreasing absolute risk averse (DARA) preferences.
+
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

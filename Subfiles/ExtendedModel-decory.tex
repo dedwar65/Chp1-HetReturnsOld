@@ -1,0 +1,99 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/IneqMeas]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/IneqMeas}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\onlyinsubfile{\setcounter{section}{3}}
+\section{Extending the model: choice under ambiguity}
+\notinsubfile{\label{sec:ExtendedModel}}
+
+\par Consider the excerpt from \cite{g09}, which may serve as a precursor to the modeling choices that will be made to characterize a ranking over wealth distributions:
+
+\begin{quote}
+
+
+To make sure that we understand the structure, observe that there are two sources of uncertainty: the choice of the state $s$, which is sometimes referred to as \say{subjective uncertainty}, because no objective probabilities are given on it, and the choice of $x$, which is done with objective probabilities once you chose your act and Nature chose a state. Specifically, if you choose $f \in F$ and Nature chooses $s \in S$, a roulette wheel is spun, with distribution $f(s)$ over the outcomes $X$, so that your probability to get outcome $x$ is $f(s)(x)$.
+
+\end{quote}
+
+\subsection{Analytical framework}
+
+\par Denote the set of outcomes $Y = [0,\bar{y}]$. Then, the choice set is given by:
+
+$$ L = \bigg\{ p: 2^{[0,\bar{y}]} \to \mathbb{R} \hspace{2mm} | \hspace{2mm} p(\cdot) \hspace{2mm} \text{is an income frequency distribution}  \bigg\}. $$
+
+\par We may define a binary relation over both sets $Y,L:$
+
+$$ \succsim_{y} \subseteq [0,\bar{y}] \times [0,\bar{y}] \subseteq \mathbb{R} \times \mathbb{R} $$
+
+$$ \succsim L \times L. $$
+
+\par Notice that $\succsim_y$ may be represented by a real-valued utility function. This is the social welfare $U(y)$ which is a key object of analysis in this paper. 
+
+\subsubsection*{Preliminary remarks}
+
+We are concerned with the comparison of two frequency distributions $f(w)$ of an outcome $w$ which we refer to as wealth. We seek to use the notion of \textit{uncertainty aversion} as an analogy to the use of the notion of risk aversion in the characterization of a ranking over income distributions.
+
+The presence of both objective and subjective uncertainty is at the heart of this analysis. Section 2 covered the analysis for objective uncertainty. Thus, the wealth frequency distribution $f(w)$ must be formalized in this abstract setting so that it explicitly captures both forms of uncertainty. Namely, each wealth distribution is associated with some relevant, underlying state space $S$ (the source of subjective uncertainty), and its objective component $p(y) \in L$. WIth this in mind, we work under the following assumption on the functional form of wealth distributions for the remainder of this paper:
+
+\begin{assu}
+Each wealth distribution $f(w)$ can be written as $p(s)y$.
+\end{assu}
+
+
+\subsection{Axiomatization}
+
+\begin{ax.AA}[Weak Order]
+$\succsim$ is complete and transitive.
+\end{ax.AA}
+
+\begin{ax.AA}[Continuity]
+For every $f,g,h \in F$,  if $f \succ g \succ h $, there exists $\alpha, \beta \in (0,1)$ such that 
+$$ \alpha f + (1-\alpha) h \succ g \succ \beta f + (1-\beta) h .$$ 
+\end{ax.AA}
+
+\begin{ax.C}[C-Independence]
+For every $f,g \in F$, every constant $h \in F$ and every $\alpha \in (0,1)$,
+$$ f \succsim g \iff \alpha f + (1-\alpha)h \succsim \alpha g + (1-\alpha)h. $$
+\end{ax.C}
+
+\begin{ax.AA}[Monotonicity]
+For every $f,g \in F$, $f(s) \geq g(s)$ for all $s \in S$ implies $f \geq g$.
+\end{ax.AA}
+
+\begin{ax.AA}[Non-trivality]
+There exists $f,g \in X$ such that $f \succ g$.
+\end{ax.AA}
+
+\begin{ax.U}[Uncertainty Aversion]
+For every $f,g \in F$, if $f \sim g$, then, for every $\alpha \in (0,1)$,
+$$ \alpha f + (1-\alpha)g \succsim f. $$
+\end{ax.U}
+
+\subsection{Expected utility representation of the ranking over wealth distributions}
+
+\par  Finally, we have the representation theorem by \cite{gs89}.
+
+
+
+\begin{tm}
+$\succsim $ satisfies AA1, AA2, C-Independence, AA4, AA5, and Uncertainty aversion if and only if there exists a closed and convex set of probabilities on $S$, $C \subset \Delta(S)$, and a non-constant function $U: Y \to \mathbb{R}$ such that, for every $f, f^* \in F,$
+$$ f \succsim f^* \iff \min_{\lambda \in \Delta(S)} \int_{S} (\mathbb{E}_{p(s)} u) d \lambda  \geq \min_{\lambda \in \Delta(S)} \int_{S} (\mathbb{E}_{p^{*}(s)} u) d \lambda.$$
+\end{tm}
+
+From here on out, we assume that wealth distributions will be ranked according to:
+
+$$ W' \equiv \min_{\lambda \in \Delta(S)} \int_{S} (\mathbb{E}_{p(s)} u) d \lambda $$
+
+$$ = \min_{\lambda \in C} \int_{S} \int_{0}^{\bar{y}} p(s)(y) U(y) dy d\lambda. $$
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput
