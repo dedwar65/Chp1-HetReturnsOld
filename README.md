@@ -15,7 +15,7 @@ Using a heterogeneous agent model calibrated to match measured spending dynamics
 -- to produce pdf version of the paper from a unix (macOS/linux) command line:
 
 ```
-	/bin/bash reproduce_document.sh
+	/bin/bash reproduce.sh
 ```
 
 
