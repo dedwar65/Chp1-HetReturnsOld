@@ -10,7 +10,7 @@
 \provideboolean{TOC}\setboolean{TOC}{true}
 
 % Keyname for paper (optional)
-\newcommand{\texname}{IneqMeas}
+\newcommand{\texname}{Chp1}
 
 % Can compile either as pdf or web document (optional)
 \providecommand{\versn}{pdf} % Version; like, web or pdf or journal submission
@@ -18,7 +18,7 @@
 % Standard useful packages for economics
 \usepackage{\econtexSetup} % Gets, configures often-used packages
 
-% Definitions unique to this paper 
+% Definitions unique to this paper
 \usepackage{\LaTeXInputs/\texname} % processes \texname.sty
 
 % Custom author (year) bib style
@@ -29,14 +29,14 @@
 % Tell subfiles they are not being compiled as standalone files
 \input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
 
-\subfile{IneqMeas-titlepage}\pagebreak
+\subfile{Chp1-titlepage}\pagebreak
 
 % Table of contents
-\ifthenelse{\boolean{TOC}}{\subfile{IneqMeas-contents.texinput}\pagebreak }{}
+\ifthenelse{\boolean{TOC}}{\subfile{Chp1-contents.texinput}\pagebreak }{}
 \input{Subfiles-decory.texinput} % Paper composed of these subfiles
 
 \pagebreak\appendix
-\ifthenelse{\boolean{Appendix}}{\subfile{Subfiles/Appendix-decory}\pagebreak }{}
+%\ifthenelse{\boolean{Appendix}}{\subfile{Subfiles/Appendix-decory}\pagebreak }{}
 
 % Make the bibliography
 \input{\LaTeXInputs/bibliography_blend}

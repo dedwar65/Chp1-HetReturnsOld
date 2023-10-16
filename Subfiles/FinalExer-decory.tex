@@ -1,0 +1,33 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Preproposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Preproposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\onlyinsubfile{\setcounter{section}{4}}
+\section{A Final Exercise Regarding Racial Wealth Inequality}
+
+\par Recall the stylized facts from the inequality literature regarding skewness in the distribution of income and wealth (i.e. that skewness in the latter is much more extreme). Similarly, racial inequality regarding income is not nearly as prounounced as it is for wealth inequality conditional on race. A commonly cited example is the racial gap in median wealth holdings. A final exercise for this work is to use the structural model with heterogeneous rates of returns we've developed to match properties of the observed wealth distribution \textit{conditional on race}. Specifically, the goal is this final step is to produce an estimate of the racial gap in median wealth holdings given the implied equilibrium distribution and see how \say{close} it is to the observable wealth gap.
+
+\par Before discussing the difficulties in accomplishing this final goal, recall the brief discussion on the sources of heterogeneous rates of return to asset holdings. One potential direction of interest is the work on the role of financial literacy from \cite{fddgri14}. There, the authors find a significant role for financial sophistication in their empirical measurements of heterogeneous rates of return to financial assets. The avenue for studying inequality conditional on race using the model presented in this project stems from the line of reasoning: \textit{if some households have a general distrust in financial institutions, how much do they invest in their own financial literacy/sophistication?}
+
+\par Much like the assumption of ex-ante heterogenous rates of time preference may capture implicit characteristics (like optimism/pessimism) of households that are important for the accumulation of wealth, the assumption of different rates of return could be capturing factors relevant to the distribution of wealth conditional on race. The work, then, is to find evidence of the relationship between levels of trust in financial institutions and racial demographics.
+
+\par Lastly, I consider to immediate obstacles in acheiving this final goal of the project. The first can be seen in the findings from \cite{gkgv22}. That is, they note that models of ex-ante heterogeneity and idiosyncratic shocks to income (which is the class of models which I will be working in here) have the potential drawback of a \say{missing middle}. That is, they don't put enough weight in the middle of the distribution. Given  an interest in developing a model that will be able to match the observed racial gap in median holdings, it may be the case the the model developed here is ill-suited for the task.
+
+\par The other clear difficulty is dealing with an abstract state space, such as $S=\{\text{black, white}\}$. To see this, first consider a quote from \cite{cstw2017}:
+
+\begin{quote}
+  To be more concrete, take the example of age. A robust pattern in most countries is that income grows much faster for young people than for older people. Our \say{death-modified growth impatience condition} (13) captures the intuition that people facing faster income growth tend to act, financially, in a more 'impatient' fashion than those facing lower growth. So we should expect young people to have lower target wealth-to-income ratios than older people. Thus, what we are capturing by allowing heterogeneity in time preference factors is probably also some portion of the difference in behavior that (in truth) reflects differences in age instead of in pure time preference factors. Some of what we acheive by allowing heterogeneity in $\beta$ could alternatively be introduced into the model if we had a more complex specification of the life cycle that allowed for different income growth rates for households of different ages.
+\end{quote}
+
+\par Although the analogy is not exact, I argue that \say{trust in financial institutions} would differ for racial groups as the growth rate of income does for different age groups.Thus, the assumption of ex-ante heterogeneous rates of return may also not be \say{pure} in the sense that the behavior in the model may be reflecting in some part differences in levels of trust. The issue in conducting this exercise, then, is that age groups are indexed by time. This has a \say{nice} structure regarding solution and simulation in numerical models. The same cannot be said for a more abstract state space.
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+\end{document}	\endinput

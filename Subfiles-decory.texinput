@@ -1,9 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*- 
 \subfile{Subfiles/Intro-decory}
-%\subfile{Subfiles/Model}
-\subfile{Subfiles/BaselineModel-decory}
-\subfile{Subfiles/Motiv-decory}
-\subfile{Subfiles/ExtendedModel-decory} 	
-\subfile{Subfiles/SWFapproach-decory}
-\subfile{Subfiles/Alternativemeasure-decory}
+\subfile{Subfiles/LitRev-decory}
+\subfile{Subfiles/Model-decory}
+\subfile{Subfiles/Results-decory}
 \subfile{Subfiles/Conclusion-decory}

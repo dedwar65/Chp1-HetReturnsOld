@@ -1,0 +1,26 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Preproposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Preproposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\hypertarget{CalEst}{}
+\onlyinsubfile{\setcounter{section}{3}}
+\section{Calibration and Estimating Heterogeneity in the Rate of Return}\notinsubfile{\label{sec:sim}}
+
+
+\par As this note is a proposal for work to come, this section will be devoted to the practical work involved with completing the project. The first step is to properly calibrate the model using parameter values from the perpetual youth model literature. From there, the next step in extending the model is to make an assumption regarding the ex-ante distribution of household rates of return. In this way,I am after the '$R$-Dist' version of the model (again, the distribution may not be uniform on some interval, but it is an initial step). After this, I will simulate the model and use wealth shares data to find the \textit{Lorenz distance}; that is, the values of $\grave{R}$ and $\nabla$ that solve the following:
+
+$$ \{\grave{R}, \nabla\} = \text{arg}\min_{R, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(R, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}}. $$
+
+\par The last step in the main portion of this project, assuming that this extension is able to match the observed distribution of wealth reasonably well, is to check whether or not the model gives reasonable predictions regarding the aggregate MPC in response to a one-time fiscal shock. As in the \cite{cstw2017} work, we are interested in the scenario where the economy is in its steady-state equilibrium up to some date $t$. Given an announcement of a one-time stimulus check from the government \textit{before} consumption decisions are made in period $t$, the final task is to then answer: how much much will aggregate consumption increase?
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

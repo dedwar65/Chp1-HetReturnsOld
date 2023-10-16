@@ -1,6 +1,6 @@
 % -*- mode: LaTeX; TeX-PDF-mode: t; -*-
-\input{./econtexRoot.texinput}\documentclass[IneqMeas]{subfiles}
-\externaldocument{\econtexRoot/IneqMeas}
+\input{./econtexRoot.texinput}\documentclass[Chp1]{subfiles}
+\externaldocument{\econtexRoot/Chp1}
 
 \begin{document}
 
@@ -15,7 +15,8 @@
 %\hfill{\tiny \jobname~\versn~\today~{at} \DTMcurrenttime, \input{\ResourcesDir/.git-source-commit}~~\input{\ResourcesDir/.git-public-commit}}
 
 \ifCDC{
-  \title{A Decision-theoretic Approach for Alternative Measures of Wealth Inequality}
+    \title{Dissertation Preproposal: \\
+     \large Heterogeneous Rates of Return and the Distribution of Wealth}
 }
 
 \author{Decory Edwards\authNum}
@@ -26,12 +27,12 @@
 }
 
 % \date{\today}
-\renewcommand{\forcedate}{May 8, 2022}\date{\forcedate}
+\renewcommand{\forcedate}{September 9, 2022}\date{\forcedate}
 
 \maketitle
 \hypertarget{abstract}{}
 \begin{verbatimwrite}{\econtexRoot/Subfiles/Abstract-decory.texinput}
- The inequality literature is notable in its ability to bring together four distinct concepts: (i) measures of inequality, (ii) social welfare functions, (iii) mean values, and (iv) models of choice under uncertainty, as noted by \cite{hd20}. This interplay between statistical and theoretical analysis ahs been commonly applied in the context of inequality in the distribution of \textit{income}. It is well-known that income and wealth inequality are markedly distinct phenomena. This distinction becomes more pronounced when one makes racial considerations regarding inequality. Notably, as recent as 2019, it has been reported that \say{the median white household held \$188,200 in wealth -- 7.8 times that of the typical Black household}. This paper provides a theoretical foundation for wealth inequality that incorporates the first three of the four distinct concepts. The ranking over wealth distributions will be established through the use of a \textit{choice under objective-subjective uncertainty} model to acheive a ranking over the defined wealth distributions. From there, the \say{social welfare approach} to proposing inequality measures as seen in \cite{aa71} is applied in this context, with the future goal of comparing an alternative measure to the \textit{black-white median wealth gap} in the U.S.
+Inequality in the distribution of wealth is a notable topic of interest both in the mainstream and in the economics literature. Reliable measurements of the wealth holdings of households, obtained either through surveys or using capitalization methods on administrative tax data, suggest that the wealth distribution is both highly skewed and exhibit heavy (Pareto) upper tails. \cite{jbab18} provide an excellent survey on both historical thought and theoretical explanations for stationary distributions of wealth with substantial skewness and heavy tails. Not surprisingly, the key arguments posited there also make their way into the standard consumption-saving problems which are a cornerstone of models prevalent in the heterogeneous agent (HA) macroeconomics literature. At the same time, recent evidence of heterogeneity in the rate of return for individuals provide motivation for an analogous assumption in the HA framework where a stationary, model distribution of wealth exists. In this way, one can test the theory regarding a meaningful relationship between stochastic returns and wealth inequality within a standard macroeconomic setting, where the direct effect of the returns to savings on the wealth accumulation process can be understood through its effect on the optimal behavior of households. A uniform distribution of the rate of return across households is estimated such that empirical moments of wealth (net worth) measured in the 2004 survey of consumer finances SCF are matched particularly well. In an effort to compare the structurally estimated distribution of returns from the model to the empirical distribution measured by \cite{aflgdmlp20}, a lognormal distribution across households is assumed. Not only does the lognormal assumption allow for the simulated moments to better fit the empirical moments for net worth, but the estimated distribution of returns is closer to its empirical counterpart as well.
 \end{verbatimwrite}
 \input{\econtexRoot/Subfiles/Abstract-decory.texinput}
 

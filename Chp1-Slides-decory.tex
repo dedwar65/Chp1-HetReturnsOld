@@ -1,0 +1,316 @@
+\input{./econtexRoot.texinput}
+\documentclass[pdflatex]{beamer}
+\usepackage{ifthen}
+\newboolean{Web}\setboolean{Web}{false}
+\providecommand{\texname}{Chp1-Slides}%
+
+\usepackage{\econark}
+\usepackage{\econtexShortcuts}
+\usepackage{\LaTeXInputs/\texname}
+
+%\setboolean{showPageHead}{false}
+
+\usepackage{natbib,amsmath,amssymb,rotating,subfigure}
+\usepackage{verbatim,moreverb,graphicx}
+\usepackage{wasysym}
+\usepackage{dcolumn}
+\usepackage{cancel}
+%\renewcommand{\LtxDir\EqDir}{\econtexRoot/Equations}
+\providecommand{\FigsRaw}{\econtexRoot/Code/Python/Figures}
+\providecommand{\CodeDir}{\econtexRoot/Code}
+\providecommand{\CalibrationDir}{\econtexRoot/Calibration}
+\providecommand{\TableDir}{\econtexRoot/Tables}
+\providecommand{\ApndxDir}{\econtexRoot/Appendices}
+\providecommand{\Ex}{\mathbb{E}}
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  \setbeamercovered{transparent}
+}
+
+\usetheme{Warsaw}
+
+\setbeamersize{text margin left=3mm}
+\setbeamersize{text margin right=3mm}
+
+%\usepackage{biblatex}
+%\addbibresource{Chp1.bib}
+%\printbibliography
+
+%\bibliographystyle{\econtexBibStyle}
+%\bibliography{Chp1.bib}
+
+\title[]{Pending}
+\author[Edwards]{Decory Edwards}
+\institute[JHU]{Johns Hopkins University}
+\date[\today]{}
+
+\begin{document}\bibliographystyle{\econtexBibStyle}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Outline}
+\end{frame}
+
+\begin{frame}{Data on Household Wealth in the U.S.}
+    
+    \begin{itemize}
+    \item \cite{wolff2004}
+    \item \cite{sz16}  
+    \end{itemize}
+    
+\vspace{2em}    
+    Question:
+\end{frame}
+%%%%%%%%%%%%%
+
+\begin{frame}
+    \begin{figure}[H]
+    \centering
+    %\includegraphics[height=6cm]{.png}
+    \caption{}
+    \end{figure}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Explaining Inequality in the Distribution of Wealth}
+
+    \begin{itemize}
+    \item 
+    \item 
+    \item   
+    \end{itemize}
+  \end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Modeling the Macroeconomy with Heterogeneous Agents}
+
+    \begin{itemize}
+    \item 
+    \end{itemize}
+    
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Empirical Evidence of Heterogeneous Rates of Return to Assets}
+
+   \begin{itemize}
+    \item 
+    \end{itemize}
+  
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+    \begin{figure}[H]
+    \centering
+    %\includegraphics[height=6cm]{.png}
+    \caption{}
+    \end{figure}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Possible Explanations for Differing Returns to Savings}
+
+   \begin{itemize}
+    \item 
+    \end{itemize}
+  
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
+
+\section{Baseline Model}
+
+\begin{frame}{Description of the household consumption-saving problem}
+\end{frame}
+%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Rate of return and the evolution of market resources}
+\end{frame}
+%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conditions for the existence of a target level of market resources}
+\end{frame}
+%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Estimation procedure}
+  \begin{itemize}
+  \item No ex-ante heterogeneity: capital-to-output ratio
+  \item Ex-ante heterogeneity in $\Rfree$: lorenz targets
+  \end{itemize}
+  
+\end{frame}
+%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Estimation procedure with heterogeneity}
+  Describe the model 
+\end{frame}
+%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+\begin{frame}{How well does the model distribution match the SCF wealth data?}
+  PY Uniform dist assumption - r-point and R-dist models and lorenz data on one graph
+  Aggregate MPC?
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{Revisiting the empirical evidence on heterogeneous rates of return}
+  Table of moments from the 2020 Fagereng et al paper.
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\begin{frame}{The estimated uniform distribution of returns for households}
+  Graph 
+  Moments
+      Both side by side with graph and moments from Fagereng
+  Too Restrictive?
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\begin{frame}{Matching the SCF data with an ex-ante lognormal distirbution of returns}
+  PY lognormal dist assumption - r-point and R-dist models and lorenz data on one graph
+  Aggregate MPC?
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{The estimated lognormal distribution of returns for households}
+  Graph
+  Moments
+      Both side by side with graph and moments from Fagereng
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\section{Liquid Asset Holdings}
+
+\begin{frame}{Why match the data on liquid wealth?}
+  capital-to-output ratio for liquid wealth
+  lorenz targets for liquid wealth
+  - where do each come from?
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{How well does the model distribution match the liquid wealth data?}
+  PY Uniform dist assumption - side by side r-point and R-dist models
+  Aggregate MPC?
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{The estimated uniform distribution of returns for households}
+  Graph 
+  Moments
+      Both side by side with graph and moments from Fagereng
+  Too Restrictive?
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\begin{frame}{Matching liquid wealth data with an ex-ante lognormal distirbution of returns}
+  PY lognormal dist assumption - side by side r-point and R-dist models
+  Aggregate MPC?
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\begin{frame}{The estimated lognormal distribution of returns for households}
+  Graph
+  Moments
+      Both side by side with graph and moments from Fagereng
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\section{Concluding remarks}
+
+\begin{frame}{Work left to be done in this paper}
+
+   \begin{itemize}
+    \item Robustness checks 
+      \begin{itemize}
+      \item Life cycle version of the model
+      \item More recent wealth data from the SCF  
+      \end{itemize}
+   \end{itemize}
+  
+\end{frame}
+%%%%%%%%%%%%%%%
+
+\begin{frame}{Future directions for this work}
+    \begin{itemize}
+    \item Scale dependence of heterogeneous rates of return
+      \begin{itemize}
+      \item Fagereng et al. 
+      \item Other relevant literature  
+      \end{itemize}
+    \item Endogenizing differences in the rate of return
+      \begin{itemize}
+      \item Trust
+      \item Financial knowledge/sophistication
+      \item Entrepreneurial talent  
+      \end{itemize}
+    \item Implications of wealth v.s. capital income taxation
+      \begin{itemize}
+        \item cite Guvenen et al. 
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%
+
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+\begin{frame}
+
+\renewcommand{\bibsection}{\subsubsection*{\bibname}}
+
+\tiny 
+
+
+\pagebreak\input{\LaTeXInputs/bibliography_blend}
+
+\end{frame}
+\end{document}\endinput
+
+%%%%%%%%%%%%%
+
+%\section{Incorporating features of the life-cycle}
+
+%\begin{frame}{Model description and modified Growth Impatience Condition}
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%\begin{frame}{Age-education dependent empirical targets}
+%\end{frame}
+%%%%%%%%%%%%%%
+
+%\begin{frame}{Matching the SCF data with an ex-ante uniform distirbution of returns}
+%  LC lognormal dist assumption - side by side r-point and R-dist models
+%  Aggregate MPC?
+%\end{frame}
+%%%%%%%%%%%%%
+
+%\begin{frame}{The estimated uniform distribution of returns for households}
+%  Graph 
+%  Moments
+%      Both side by side with graph and moments from Fagereng
+%  Too Restrictive?
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%\begin{frame}{Matching the SCF data with an ex-ante lognormal distirbution of returns}
+%  LC lognormal dist assumption - side by side r-point and R-dist models
+%  Aggregate MPC?
+%\end{frame}
+%%%%%%%%%%%%%
+
+%\begin{frame}{The estimated lognormal distribution of returns for households}
+%  Graph
+%  Moments
+%      Both side by side with graph and moments from Fagereng
+%\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

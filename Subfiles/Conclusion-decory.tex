@@ -1,14 +1,31 @@
 \input{./econtexRoot.texinput}
-\documentclass[\econtexRoot/IneqMeas]{subfiles}
-\onlyinsubfile{\externaldocument{\econtexRoot/IneqMeas}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+\documentclass[\econtexRoot/PreproposalFinal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/PreproposalFinal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
 
 \begin{document}
 
-\onlyinsubfile{\setcounter{section}{6}}
-\section{Conclusion}
+\hypertarget{Conclusion}{}
+\section{Directions for future research}\notinsubfile{\label{sec:conclusion}}
+%\setcounter{page}{0}\pagenumbering{arabic}
 
-\par We have reached an alternative measure of wealth inequality, $I'$. The measure both utilizes the notion of representative wealth levels and preserves the mean-independence property that many statistical measures of inequality have. The goal of this exercise is to apply it in the context of racial wealth inequality. There, the story is generally told using the aforementioned statistical measures of inequality (nost notable, the \textit{black-white median wealth gap}).
 
-\par With the arguments made in section $3$, it seems reasonable to suspect that a state space such as $S=\{\text{black, white}\}$ should largely inform our measure of wealth inequality via some ranking over wealth distributions. Historical episodes such as enslavement and the era of Jim Crows laws suggest that race may be a socially-relevant feature in characterizing the level of inequality in a given wealh distribution. The main issue is whether or not the effects of these historical episodes persist over time, as well as how explanatory they are for racial differences in wealth.
+\par Similar to how assuming ex-ante heterogeneous rates of time preference may capture implicit household characteristics such as optimism or pessimism that affect wealth accumulation, \textit{the assumption of varying rates of return could be capturing factors that are relevant to wealth distribution}. This opens up the possibility of research that seeks to establish a relationship between levels of trust in financial institutions and the rates of return received by households on their asset holdings. While some studies in the literature (such as \cite{lgpslz2008} and \cite{jbpglg2016}) have compared differences in trust levels to relevant economic factors, the novelty of the datasets used to estimate heterogeneity in rates of return means that the link between trust and returns to financial assets remains unexplored in empirical research.
 
-\end{document}
+\par To credibly assert that differences in trust levels are a source of the heterogeneity in rates of return among households, two questions must be addressed: (i) what factors could make some households more distrustful of financial institutions than others? and (ii) what mechanisms could cause a household with lower trust to earn less on the same level of assets than a more trusting household?
+
+\par To address question (i), a potential explanation for households to have less trust in financial institutions is their past interactions with actors in the financial system. If individuals feel slighted in their past dealings with financial institutions, it is reasonable to suspect that these individuals will have less trust in financial services. The issue of consumer fees for banking services is a historically relevant policy concern, and the literature, such as \cite{roberta2017}, has sought to establish a relationship between consumer characteristics and the structure of banking fees. Another explanation for different levels of trust among American households, albeit less quantitative, is the history of discrimination in the financial sector for certain subpopulations. \cite{mehrab2017}'s excellent book highlights how \say{black and white americans have had a separate and unequal system of banking and credit}. Given the stylized empirical finding of a racial wealth gap between these groups, incorporating a notion of trust into the computational model aimed at matching wealth data may be a fruitful avenue for developing a heterogeneous agent model that can account for racial differences in asset holdings. 
+
+
+\par Regarding (ii), one potential link between trust and rates of return is the role of financial literacy in navigating the use of financial services. For instance, \cite{fddgri14} found a significant correlation between financial sophistication and heterogeneous rates of return to financial assets. This finding leads to the following line of inquiry: if certain households have a general distrust in financial institutions, to what extent do they invest in improving their financial literacy and sophistication? This question is particularly relevant for understanding racial disparities in wealth accumulation.
+
+
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput
