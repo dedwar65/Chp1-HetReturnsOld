@@ -35,8 +35,8 @@ All of these parameters are set when running this file from one of the do_XXX.py
 files in the root directory.
 """
 
-from code.agents import AggDoWAgent, AggDoWMarket, DoWAgent, DoWMarket
-from code.calibration import SCF_wealth, SCF_weights
+from agents import AggDoWAgent, AggDoWMarket, DoWAgent, DoWMarket
+from calibration import SCF_wealth, SCF_weights
 from copy import copy, deepcopy
 from time import time
 
@@ -579,7 +579,7 @@ def estimate(options, params):
             economy.spread_estimate = spread_estimate
 
         economy.show_many_stats(spec_name)
-        print(f"These results have been saved to ./code/results/{spec_name}.txt\n\n")
+        #print(f"These results have been saved to ./code/results/{spec_name}.txt\n\n")
 
     return economy
 
@@ -665,10 +665,10 @@ class Estimator:
         return estimate(self.options, self.parameters)
 
 
-if __name__ == "__main__":
-    import code.calibration as parameters
-    from code.options.all_options import all_options
-
-    basic_options = all_options["UseUniformBetaDist"].copy()
-    basic_options.update(all_options["DoStandardWork"])
-    estimate(basic_options, parameters)
+#if __name__ == "__main__":
+#    import code.calibration as parameters
+#    from code.options.all_options import all_options
+#
+#    basic_options = all_options["UseUniformBetaDist"].copy()
+#    basic_options.update(all_options["DoStandardWork"])
+#    estimate(basic_options, parameters)

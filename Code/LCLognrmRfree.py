@@ -1,6 +1,6 @@
-import code.calibration as parameters
+import calibration as parameters
 import warnings  # The warnings package allows us to ignore some harmless but alarming warning messages
-from code.estimation import estimate, plot_lorenz_dist
+from estimation import estimate, plot_lorenz_dist
 
 # Import related generic python packages
 
