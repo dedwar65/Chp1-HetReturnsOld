@@ -1,0 +1,26 @@
+Estimate is center=1.02199888670157, spread=0.0
+Lorenz distance is nan
+Average MPC for all consumers is nan
+Average MPC in the top percentile of W/Y is nan
+Average MPC in the top decile of W/Y is nan
+Average MPC in the top quintile of W/Y is nan
+Average MPC in the second quintile of W/Y is nan
+Average MPC in the middle quintile of W/Y is nan
+Average MPC in the fourth quintile of W/Y is nan
+Average MPC in the bottom quintile of W/Y is nan
+Average MPC in the top percentile of y is 0.691
+Average MPC in the top decile of y is 0.691
+Average MPC in the top quintile of y is 0.691
+Average MPC in the second quintile of y is nan
+Average MPC in the middle quintile of y is nan
+Average MPC in the fourth quintile of y is 0.691
+Average MPC in the bottom quintile of y is 0.691
+Average MPC for the employed is nan
+Average MPC for the unemployed is 0.691
+Average MPC for the retired is nan
+Of the population with the 1/3 highest MPCs...
+nan% are in the bottom wealth quintile,
+nan% are in the second wealth quintile,
+nan% are in the third wealth quintile,
+nan% are in the fourth wealth quintile,
+and nan% are in the top wealth quintile.

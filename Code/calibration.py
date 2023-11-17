@@ -432,6 +432,13 @@ init_dropout = {
     "aNrmInitStd": aNrmInitStd,
     "pLvlInitMean": pLvlInitMean_d,
     "pLvlInitStd": pLvlInitStd,
+    # Add the 6 key-value pairs to solve the Agent's problem modified to allow for bequest motives
+    "BeqCRRA": CRRA,
+    "BeqFac": 1.0,
+    "BeqShift": 0.0,
+    "TermBeqCRRA": CRRA,
+    "TermBeqFac": 1.0,
+    "TermBeqShift": 0.0,
 }
 adj_highschool = {
     "PermGroFac": PermGroFac_h,
@@ -480,6 +487,13 @@ init_infinite = {
     "pLvlInitMean": 0.0,
     "pLvlInitStd": 0.0,
     "AgentCount": 0,  # will be overwritten by parameter distributor
+    # Add the 6 key-value pairs to solve the Agent's problem modified to allow for bequest motives
+    "BeqCRRA": CRRA,
+    "BeqFac": 1.0,
+    "BeqShift": 0.0,
+    "TermBeqCRRA": CRRA,
+    "TermBeqFac": 1.0,
+    "TermBeqShift": 0.0,
 }
 
 # Make a base dictionary for the CstwMPCMarket

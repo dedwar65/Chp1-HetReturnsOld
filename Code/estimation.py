@@ -35,7 +35,7 @@ All of these parameters are set when running this file from one of the do_XXX.py
 files in the root directory.
 """
 
-from agents import AggDoWAgent, AggDoWMarket, DoWAgent, DoWMarket
+from agents import AggDoWAgent, AggDoWMarket, DoWAgent, DoWMarket, WUFDoWAgent
 from calibration import SCF_wealth, SCF_weights
 from copy import copy, deepcopy
 from time import time
@@ -246,9 +246,14 @@ def get_spec_name(options):
         dist_text = "Unif_logdiff"
     else:
         raise ValueError("Distribution for parameter must be specified.")
+    
+    if options["WUF"]:
+        wuf_txt = "WUF"
+    else:
+        wuf_txt = ""
 
     spec_name = (
-        life_text + dist_text + param_text + model_text + shock_text + wealth_text
+        wuf_txt + life_text + dist_text + param_text + model_text + shock_text + wealth_text
     )
 
     return spec_name
@@ -267,6 +272,9 @@ def get_hark_classes(options):
     if options["do_agg_shocks"]:
         agent_class = AggDoWAgent
         market_class = AggDoWMarket
+    elif options["WUF"]:
+        agent_class = WUFDoWAgent
+        market_class = DoWMarket
     else:
         agent_class = DoWAgent
         market_class = DoWMarket
