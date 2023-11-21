@@ -15,7 +15,7 @@ def mystr(number):
 
 # Specify parameters for options dictionary
 param_name = "Rfree"  # Which parameter to introduce heterogeneity in
-dist_type = "logdiff_uniform"  # Which type of distribution to use
+dist_type = "uniform"  # Which type of distribution to use
 run_estimation = True  # Runs the estimation if True
 run_sensitivity = [
     False,
@@ -49,7 +49,7 @@ options = {
     "do_lifecycle": do_lifecycle,
     "do_agg_shocks": do_agg_shocks,
     "do_liquid": do_liquid,
-    "WUF": False
+    "WUF": True
 }
 
 spec_name = get_spec_name(options)
@@ -59,12 +59,13 @@ economy = set_up_economy(options, parameters, param_count)
 economy.spec_name = spec_name
 economy.param_count = param_count
 
-economy.assign_parameters(LorenzBool=False, ManyStatsBool=False)
-economy.distribute_params(param_name, param_count, 1.005, 0.0, dist_type)
+economy.assign_parameters(LorenzBool=True, ManyStatsBool=True)
+economy.distribute_params(param_name, param_count, .99, 0.0, dist_type)
 economy.solve()
 
 #economy = estimate(options, parameters)
 
 print(economy.history)
+print(economy.agents[0].Rfree)
 
 

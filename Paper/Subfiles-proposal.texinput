@@ -1,0 +1,6 @@
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*- 
+\subfile{Subfiles/Intro-proposal}
+%\subfile{Subfiles/LitRev-decory}
+\subfile{Subfiles/Model-proposal}
+\subfile{Subfiles/Results-proposal}
+%\subfile{Subfiles/Conclusion-decory}
