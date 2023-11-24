@@ -1,6 +1,6 @@
 \input{./econtexRoot.texinput}
-\documentclass[\econtexRoot/PreproposalFinal]{subfiles}
-\onlyinsubfile{\externaldocument{\econtexRoot/PreproposalFinal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+\documentclass[\econtexRoot/Chp1proposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Chp1proposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
 
 \begin{document}
 
@@ -14,7 +14,9 @@
 
 $$ y_t = p_t \xi_t W_t . $$
 
-\par The level of permanent income for each household is subject to a stochastic process. In line with \cite{mf1957}'s description of the labor income process, we assume that this process follows a geometric random walk, which can be expressed as:
+%\par The level of permanent income for each household is subject to a stochastic process. In line with \cite{mf1957}'s description of the labor income process,
+
+\par I assume that the level of permanent income for each household follows a geometric random walk:
 
 $$ p_t = p_{t-1} \psi_{t}, $$
 
@@ -32,11 +34,11 @@ $$ p_t = p_{t-1} \psi_{t}, $$
 
 \subsection{Baseline model for households}
 
-\par This paragraph presents the baseline version of the household's optimization problem for consumption-savings decisions, assuming no ex-ante heterogeneity. In this case, each household aims to maximize its expected discounted utility of consumption $u(c) = \frac{c^{1-\rho}}{1-\rho}$ by solving the following:
+\par In the baseline version of the household's optimization problem for consumption-savings decisions each household aims to maximize its expected discounted utility of consumption $u(c) = \frac{c^{1-\rho}}{1-\rho}$ by solving the following:
 
 $$ \max \mathbb{E}_t \sum_{n=0}^{\infty}(\cancel{D}\beta)^{n} u(c_{t+n}). $$
 
-\par It's worth noting that the setting described here follows a perpetual youth model of buffer stock savings, similar to the seminal work of \cite{ks1998}. To solve this problem, we use the bellman equation, which means that the sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy\footnote{Here, each of the relevant variables have been normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on). This is the standard state-space reduction of the problem for numerical tractibility.} 
+\par The sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy\footnote{Here, each of the relevant variables have been normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on). This is the standard state-space reduction of the problem for numerical tractibility.} 
 
 \begin{eqnarray*}
   v(m_t) &=& \max_{c_t} u(c_t(m_t)) + \beta \cancel{D} \mathbb{E}_{t}[\psi_{t+1}^{1-\rho}v(m_{t+1})] \\
@@ -46,27 +48,6 @@ $$ \max \mathbb{E}_t \sum_{n=0}^{\infty}(\cancel{D}\beta)^{n} u(c_{t+n}). $$
   m_{t+1} &=& (\daleth + r_t)k_{t+1} + \xi_{t+1}, \\
   a_t &\geq& 0.
 \end{eqnarray*}
-
-\subsubsection{The analogy for rates of return}
-
-\par If we want to explore how different returns to assets can affect the endogenous wealth distribution, it's important to examine the following decomposition of a household's evolution of market resources over time:
-
-\begin{enumerate}
-  \item Assets at the end of the period are equal to market resources minus consumption:
-
-$$ a_t = m_t - c_t.  $$
-    
-  \item Next period's capital is determined from this period's assets via
-
-$$ k_{t+1} = \frac{a_t}{\cancel{D}\psi_t}.  $$
-
-  \item Finally, the transition from the beginning of period $t+1$ when capital has not yet been used to produce output, to the middle of that period when output has been produced and incorporated into resources but has not yet been consumed is:
-
-$$ m_{t+1} = (\daleth + r_t)K_{t+1} + \xi_{t+1}.  $$
-
-  \end{enumerate}
-
-\par It's worth recalling that in this model, the rate of return to capital is represented as $(\daleth + r_t)$. This rate of return is directly related to the endogenous level of wealth, which is determined by the level of capital $K_{t+1}$. Therefore, if there are differences in the rate of return across households, this will result in further disparities in wealth holdings.
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
 

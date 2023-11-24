@@ -15,8 +15,8 @@ Average MPC in the second quintile of y is 0.151
 Average MPC in the middle quintile of y is 0.165
 Average MPC in the fourth quintile of y is 0.174
 Average MPC in the bottom quintile of y is 0.181
-Average MPC for the employed is 0.129
-Average MPC for the unemployed is 0.159
+Average MPC for the employed is 0.134
+Average MPC for the unemployed is 0.145
 Average MPC for the retired is 0.235
 Of the population with the 1/3 highest MPCs...
 49.170% are in the bottom wealth quintile,

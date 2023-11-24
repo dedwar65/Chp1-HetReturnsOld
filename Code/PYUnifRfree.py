@@ -3,6 +3,10 @@
 import calibration as parameters
 import warnings  # The warnings package allows us to ignore some harmless but alarming warning messages
 from estimation import estimate, plot_lorenz_dist
+from calibration import SCF_wealth, SCF_weights
+from HARK.utilities import get_lorenz_shares
+import numpy as np
+import matplotlib.pyplot as plt 
 
 # Import related generic python packages
 
@@ -51,9 +55,7 @@ options = {
     "do_liquid": do_liquid,
 }
 
-EstimationEconomy = estimate(options, parameters)
-
-plot_lorenz_dist(options, EstimationEconomy)
+EconomyPoint = estimate(options, parameters)
 
 # Then solve with heterogeneity
 do_param_dist = True  # Do param-dist version if True, param-point if False
@@ -76,6 +78,29 @@ options = {
     "do_combo_estimation": False,
 }
 
-EstimationEconomy = estimate(options, parameters)
+EconomyDist = estimate(options, parameters)
 
-plot_lorenz_dist(options, EstimationEconomy)
+pctiles = np.linspace(0.001, 0.999, 15)  # may need to change percentiles
+SCF_Lorenz_points = get_lorenz_shares(
+        SCF_wealth, weights=SCF_weights, percentiles=pctiles
+    )
+
+sim1_wealth = np.concatenate(EconomyPoint.reap_state["aLvl"])
+sim1_Lorenz_points = get_lorenz_shares(sim1_wealth, percentiles=pctiles)
+    
+sim2_wealth = np.concatenate(EconomyDist.reap_state["aLvl"])
+sim2_Lorenz_points = get_lorenz_shares(sim2_wealth, percentiles=pctiles)
+
+plt.figure(figsize=(5, 5))
+plt.title("Wealth Distribution")
+plt.plot(pctiles, SCF_Lorenz_points, "-k", label="SCF")
+plt.plot(
+        pctiles, sim1_Lorenz_points, "--k", label="R-point"
+    )
+plt.plot(
+        pctiles, sim2_Lorenz_points, "-.k", label="R-dist"
+    )
+plt.xlabel("Percentile of net worth")
+plt.ylabel("Cumulative share of wealth")
+plt.legend(loc=2)
+plt.ylim([0, 1])

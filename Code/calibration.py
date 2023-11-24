@@ -433,7 +433,7 @@ init_dropout = {
     "pLvlInitMean": pLvlInitMean_d,
     "pLvlInitStd": pLvlInitStd,
     # Add the 6 key-value pairs to solve the Agent's problem modified to allow for bequest motives
-    "BeqCRRA": CRRA,
+    "BeqCRRA": CRRA,    
     "BeqFac": 1.0,
     "BeqShift": 0.0,
     "TermBeqCRRA": CRRA,
