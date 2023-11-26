@@ -29,10 +29,10 @@
 % Tell subfiles they are not being compiled as standalone files
 \input{\LaTeXInputs/econtex_notinsubfile} % instead are part of a larger document
 
-\subfile{Chp1-titlepage}\pagebreak
+%\subfile{Chp1-titlepage}\pagebreak
 
 % Table of contents
-\ifthenelse{\boolean{TOC}}{\subfile{Chp1-contents.texinput}\pagebreak }{}
+%\ifthenelse{\boolean{TOC}}{\subfile{Chp1-contents.texinput}\pagebreak }{}
 \input{Subfiles-proposal.texinput} % Paper composed of these subfiles
 
 \pagebreak\appendix
