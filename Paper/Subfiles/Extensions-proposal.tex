@@ -12,11 +12,11 @@ This concludes the preliminary results of this work. From here on, I discuss act
 
 \subsection{Incorporating bequest motives}
 
-\par The model to this point completely explains the saving behavior of households through the precautionary saving motive present in this setting. The desire to leave bequests is thought to be an important reason for households to save, especially those at the top end of the wealth distribution. More generally, the following specification of additively separable wealth in the utility function extends the model to accomodate these other reasons to accumulate assets:
+\par The model to this point completely explains the saving behavior of households through the precautionary saving motive present in this setting. The desire to leave bequests is thought to be an important reason for households to save, especially those at the top end of the wealth distribution. More generally, the following specification of additively separable wealth in the utility function\footnote{Alternative specifications, such as a non-separable utility function of consumption and wealth, may also be explored in this setting.} extends the model to accomodate these other reasons to accumulate assets:
 
 $$u(c_t, a_t) = \frac{c_{t}^{1-\rho}}{1-\rho} + \kappa \frac{(a_{t}-\underbar{a})^{1-\Sigma}}{1-\Sigma}.$$
 
-\par It is straightforward to implement this in the existing code. \cite{ls2019} not only provides calibration values for $\kappa$ and $\underbar{a}$ and estimation for the elasticity parameters.\footnote{The paper also discusses the implications of assuming $\Sigma = \rho$ versus $\Sigma < \rho$. Incorporating the latter is a more difficult implementation in the existing code, but it is a highly desirable version of the model in order to match the empirical evidence on the saving behavior of households.} In my setting, I will need to make decisions about which features of the wealth component of the utility function should be estimated, and which should be calibrated. Alternative specifications, such as a non-separable utility function of consumption and wealth, may also be explored in this setting.
+\par \cite{ls2019} provides calibration values for $\kappa$ and $\underbar{a}$ and estimation for the elasticity parameters.\footnote{The paper also discusses the implications of assuming $\Sigma = \rho$ versus $\Sigma < \rho$. Incorporating the latter is a more difficult implementation in the existing code, but it is a highly desirable version of the model in order to match the empirical evidence on the saving behavior of households.} However, I will need to make decisions about which additional features of the model should be estimated. This will require more empirical moments of the data to be matched by the simulated moments.
 
 \subsection{Incorporating portfolio choice}
 
@@ -34,13 +34,11 @@ $$u(c_t, a_t) = \frac{c_{t}^{1-\rho}}{1-\rho} + \kappa \frac{(a_{t}-\underbar{a}
 
 \par where $\mathbb{R}$ denotes the overall return on the portfolio across periods.\footnote{The perpetual youth setting is provided for simplicity. It is straightforward to allow for portfolio choice in the life cycle setting.}
 
-\par This full model will be accompanied by a revised structural estimation procedure. Here, I will assume that households earn the same rate of return on the safe asset $\Rfree$, but are allowed to be ex-ante heterogeneous in the rate of reutn on the risky asset. This will be captured by allowing each type of household in theestimation drawing from a lognormal distribution of $\mathcal{R}$ which has the same variance but different means. The goal of the procedure will be to find this distribution of returns to risky assets which allows the model to best match the empirical moments of the SCF wealth data.
-
-\par Decisions will need to be made regarding what parameters are relevant to be estimated. The main issue is that, once portfolio choice is incorporated in a consumption-saving model, one should reasonable suspect that households have different levels of risk aversion. This suggests that a distribution of risk preferences, as well as returns, should be estimated. This will require more empirical moments so that the parameters can be correctly identified.  
+\par There are at least two issues that must be resolved in this version of the model. First, once portfolio choice is incorporated, households may have different levels of risk aversion which determines their optimal portfilio share. This suggests that a distribution of risk preferences should be estimated as well, which would require more empirical moments for correct identification. Second, I must be careful to retain the notion of heterogeneous returns \textit{conditional on the risky portfolio share} measured by \cite{aflgdmlp20}. With a single asset, the analogy is clear since there is no risky asset. I'd like to preserve this definition of heterogeneous returns, since it is the key novelty of the empirical motivation for this model.
 
 \subsection{Multiple SCF waves for empirical moments}
 
-\par After the full model is calibrated and correctly specified, with empirical moments chosen to allow for accurate estimation of the paramters capturing ex-ante heterogeneity across households, I will rerun the exercise for wealth data other than the 2004 SCF wave. This will constitute a sort of robustness check regarding how plausible the resulting heterogeneity of returns and risk preferences are necessary to generate inequality in wealth which is closest to the observed inequality.
+\par A final exercise is to rerun the exercise for wealth data other than the 2004 SCF wave. This will constitute a sort of robustness check regarding the plausibility of the estimated heterogeneity in the parameters of interest required to match the SCF data.
 
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}

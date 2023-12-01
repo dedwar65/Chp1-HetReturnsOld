@@ -8,19 +8,17 @@
 \section{Model}
 \notinsubfile{\label{sec:Model}}
 
-\subsection{Defining the stochastic income process}
+\par First, I describe labor income risk in this setting. Household income $(y_t)$ can be expressed as the following:
 
-\par Each household's income $(y_t)$ during a given period depends on three main factors. The first factor is the aggregate wage rate $(W_t)$ that all households in the economy face. The second factor is the permanent income component $(p_t)$, which represents an agent's present discounted value of human wealth. Lastly, the transitory shock component $(\xi_t)$ reflects the potential risks that households may face in receiving their income payment during that period. Thus, household income can be expressed as the following:
+$$ y_t = p_t \xi_t W_t, $$
 
-$$ y_t = p_t \xi_t W_t . $$
-
-%\par The level of permanent income for each household is subject to a stochastic process. In line with \cite{mf1957}'s description of the labor income process,
-
-\par I assume that the level of permanent income for each household follows a geometric random walk:
+where the aggregate wage rate is $(W_t)$, the permanent income component is $(p_t)$, and the transitory shock component is $(\xi_t)$. I assume that the level of permanent income for each household follows a geometric random walk:
 
 $$ p_t = p_{t-1} \psi_{t}, $$
 
-\par The white noise permanent shock to income with a mean of one is represented by $\psi_t$, which is a significant component of household income. The probability of receiving income during a given period is determined by the transitory component, which is modeled to reflect the potential risks associated with becoming unemployed. Specifically, if the probability of becoming unemployed is $\mho$, the agent will receive unemployment insurance payments of $\mu > 0$. On the other hand, if the agent is employed, which occurs with a probability of $1 - \mho$, the model allows for tax payments $\tau_t$ to be collected as insurance for periods of unemployment. The transitory component is then represented as:
+where the white noise permanent shock to income with a mean of one is represented by $\psi_t$.
+
+\par The probability of becoming unemployed is $\mho$; in this case, the agent will receive unemployment insurance payments of $\mu > 0$. With probability $1 - \mho$ the agent is employed and tax payments $\tau_t$ are collected as insurance for periods of unemployment. Altogether, the transitory component of income is given by:
 
 \begin{equation*}
 \xi_t =
@@ -30,15 +28,9 @@ $$ p_t = p_{t-1} \psi_{t}, $$
     \end{cases}
 \end{equation*}
 
-\par where $l$ is the time worked per agent and the parameter $\theta$ captures the white noise component of the transitory shock.
+where $l$ is the time worked per agent and the parameter $\theta$ captures the white noise component of the transitory shock.
 
-\subsection{Baseline model for households}
-
-\par In the baseline version of the household's optimization problem for consumption-savings decisions each household aims to maximize its expected discounted utility of consumption $u(c) = \frac{c^{1-\rho}}{1-\rho}$ by solving the following:
-
-$$ \max \mathbb{E}_t \sum_{n=0}^{\infty}(\cancel{D}\beta)^{n} u(c_{t+n}). $$
-
-\par The sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy\footnote{Here, I denote $a_t$ as assets, $m_t$ as market resources (or cash-on-hand), $k_t$ as capital, and $\daleth = (1 - \delta)$ as the depreciation factor for capital. Each of the relevant variables have been normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on). This is the standard state-space reduction of the problem for numerical tractibility.} 
+\par Next, I present a standard model of household behavior. The sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy\footnote{Here, I denote $a_t$ as assets, $m_t$ as market resources (or cash-on-hand), $k_t$ as capital, and $\daleth = (1 - \delta)$ as the depreciation factor for capital. Each of the relevant variables have been normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on). This is the standard state-space reduction of the problem for numerical tractibility.} 
 
 \begin{eqnarray*}
   v(m_t) &=& \max_{c_t} u(c_t(m_t)) + \beta \cancel{D} \mathbb{E}_{t}[\psi_{t+1}^{1-\rho}v(m_{t+1})] \\
@@ -48,6 +40,30 @@ $$ \max \mathbb{E}_t \sum_{n=0}^{\infty}(\cancel{D}\beta)^{n} u(c_{t+n}). $$
   m_{t+1} &=& (\daleth + r_t)k_{t+1} + \xi_{t+1}, \\
   a_t &\geq& 0.
 \end{eqnarray*}
+
+\subsection{Results}
+\par To solve and simulate the model, I follow the calibration scheme captured in table \ref{tab:calib1}.
+\input{./Tables/calibPY.tex}\unskip
+
+\par The solution of the model with no heterogeneity in returns (the R-point model) is the one which finds the value for the rate of return $\Rfree$ which minimizes the distance between the simulated and empirical wealth shares at the 20th, 40th, 60th, and 80th percentiles. The empirical targets are computed using the 2004 Survey of Consumer Finances (SCF) data on household wealth. The estimation procedure finds this optimal value to be $\Rfree = 1.0153$.
+
+\subsubsection{Incorporating heterogeneous returns}
+
+\par Recent studies by \cite{aflgdmlp20} and \cite{lblcps18} have not only estimated the rate of return on asset holdings but have also uncovered significant heterogeneity across households. Given this motivation, the next estimation (the R-dist model) assumes the existence of multiple types of agents, each earning a distinct rate of return on their assets.
+
+\par Specifically, I assume that different types of households have a time preference factor drawn uniformly from the interval $(\grave{\Rfree} - \nabla, \grave{\Rfree} + \nabla)$, where $\nabla$ represents the level of dispersion. Afterward, the model is simulated to estimate the values of both $\grave{\Rfree}$ and $\nabla$ so that the model matches the inequality in the wealth distribution. To achieve this, the following minimization problem is solved:
+
+$$ \{\grave{\Rfree}, \nabla\} = \text{arg}\min_{\Rfree, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(\Rfree, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}} $$
+
+\par subject to the constraint that the aggregate capital-to-output ratio in this model matches that of the perfect foresight setting:
+
+$$ \frac{K}{Y} = \frac{K_{PF}}{Y_{PF}}. $$
+
+\par Note that $w_i$ and $\omega_i$ give the porportion of total aggregate net worth held by the top $i$ percent in the model and in the data, respectively.
+
+\par The estimation procedure finds this optimal values of $\Rfree = 1.0106$ and $\nabla = 0.0112$. The performance of the estimation of both the R-point and R-dist models, measured by their ability to match the SCF data, is compared in figure \ref{fig:PYUnif}.
+
+\input{./Figures/PYUnif.tex}
 
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
