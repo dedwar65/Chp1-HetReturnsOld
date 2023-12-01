@@ -76,6 +76,7 @@ options = {
     "do_agg_shocks": do_agg_shocks,
     "do_liquid": do_liquid,
     "do_combo_estimation": False,
+    "WUF": False
 }
 
 EconomyDist = estimate(options, parameters)
