@@ -1,0 +1,29 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Chp1proposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Chp1proposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\hypertarget{Introduction}{}
+\section{Introduction}\notinsubfile{\label{sec:intro}}
+\setcounter{page}{0}\pagenumbering{arabic}
+
+\par A quantitative analysis of household finance can be accomplished using a standard framework of household decision making found in the computational heterogeneous agent (HA) macro literature. In particular, the setting is well equipped to study to the relationship between the consumption-saving behavior and income and wealth inequality.
+
+\par One of the many important feautures of saving and borrowing behavior is the rate of return to assets. Reliable estimates of individual returns computed using population data in Norway by \cite{aflgdmlp20} suggest that there is substantial heterogeneity in the rate of return. This is a notable finding for the management of consumer finances: it is well known that differences in returns to assets will lead to a skewed distribution of wealth\footnote{\cite{jbab18} provide a useful survey of the wealth inequality literature.}.
+
+\par The preliminary findings of this work provide some affirmation of this sentiment. A model which allows for heterogeneity in the rate of return produces a distribution of wealth which closely matches the inequality in measured wealth holdings.
+
+\par However, what is less clear are (i) the determinants of these heterogeneous returns and (ii) the quantitative effects of these determinants on wealth inequality through this returns channel. Outside of incorporating other relevant features of the household consumption-saving problem, like bequest motives and portfolio choice, the next step in this work will be to provide answers to (i) and (ii). Two insights from the literature which I would like to explore to acomplish this are \textit{financial literacy} and \textit{trust in financial institutions}.
+
+\par This proposal will outline the aforementioned preliminary results. Then I discuss the proposed extensions of the model in detail. The completion of these extensions will result in a finalized, deliverable version of this paper.
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

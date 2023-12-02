@@ -30,7 +30,7 @@ where the white noise permanent shock to income with a mean of one is represente
 
 where $l$ is the time worked per agent and the parameter $\theta$ captures the white noise component of the transitory shock.
 
-\par Next, I present a standard model of household behavior. The sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy\footnote{Here, I denote $a_t$ as assets, $m_t$ as market resources (or cash-on-hand), $k_t$ as capital, and $\daleth = (1 - \delta)$ as the depreciation factor for capital. Each of the relevant variables have been normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on). This is the standard state-space reduction of the problem for numerical tractibility.} 
+\par Next, I present a standard model of household behavior. The sequence of consumption functions $\{c_{t+n}\}^{\infty}_{n=0}$ associated with a household's optimal choice over a lifetime must satisfy:
 
 \begin{eqnarray*}
   v(m_t) &=& \max_{c_t} u(c_t(m_t)) + \beta \cancel{D} \mathbb{E}_{t}[\psi_{t+1}^{1-\rho}v(m_{t+1})] \\
@@ -38,8 +38,10 @@ where $l$ is the time worked per agent and the parameter $\theta$ captures the w
   a_t &=& m_t - c_t(m_t), \\
   k_{t+1} &=& \frac{a_t}{\cancel{D}\psi_{t+1}}, \\
   m_{t+1} &=& (\daleth + r_t)k_{t+1} + \xi_{t+1}, \\
-  a_t &\geq& 0.
+  a_t &\geq& 0,
 \end{eqnarray*}
+
+where I denote $a_t$ as assets, $m_t$ as market resources, $k_t$ as capital, and $\daleth = (1 - \delta)$ as the depreciation factor for capital. \footnote{Each of the relevant variables have been normalized by the level of permanent income ($c_t = \frac{C_t}{p_t}$, and so on).}
 
 \subsection{Results}
 \par To solve and simulate the model, I follow the calibration scheme captured in table \ref{tab:calib1}.
