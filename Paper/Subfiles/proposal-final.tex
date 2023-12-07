@@ -1,0 +1,19 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Chp1]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Chp1}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\section{Introduction}
+
+
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

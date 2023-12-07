@@ -10,16 +10,6 @@
 
 This concludes the preliminary results of this work. From here on, I discuss actionable extensions of the model which are of high priority to be completed.
 
-\subsection{Incorporating bequest motives}
-
-\par The desire to leave bequests is thought to be an important reason for households to save, especially those at the top end of the wealth distribution. More generally, the following specification of additively separable wealth in the utility function\footnote{Alternative specifications, such as a non-separable utility function of consumption and wealth, may also be explored in this setting.} extends the model to accomodate these other reasons to accumulate assets:
-
-$$u(c_t, a_t) = \frac{c_{t}^{1-\rho}}{1-\rho} + \kappa \frac{(a_{t}-\underbar{a})^{1-\Sigma}}{1-\Sigma}.$$
-
-\par \cite{ls2019} provides calibration values for $\kappa$ and $\underbar{a}$ and estimation for the elasticity parameters. However, I will need if additional parameters should be estimated and what corresponding empirical moments of the data will be needed for identification.
-
-% \footnote{The paper also discusses the implications of assuming $\Sigma = \rho$ versus $\Sigma < \rho$. Incorporating the latter is a more difficult implementation in the existing code, but it is a highly desirable version of the model in order to match the empirical evidence on the saving behavior of households.}
-
 \subsection{Incorporating portfolio choice}
 
 \par Portfolio choice is also an important feature of the consumption-saving problem of households not currently present in the model. Denoting the gross return on the risky asset as $\mathcal{R}_{t+1}$ and the proportion of the porfolio invested in the risky asset as $\varsigma_t$, the revised maximization problem is
@@ -29,9 +19,9 @@ $$u(c_t, a_t) = \frac{c_{t}^{1-\rho}}{1-\rho} + \kappa \frac{(a_{t}-\underbar{a}
   &\text{s.t.}& \\
   a_t &=& m_t - c_t(m_t), \\
   k_{t+1} &=& \frac{a_t}{\cancel{D}\psi_{t+1}}, \\
-  \mathbb{R}_{t+1} &=& \Rfree_{t+1} = (\mathcal{R}_{t+1} - \Rfree_{t+1})\varsigma_t \\
+  \mathbb{R}_{t+1} &=& \Rfree_{t+1} = (\mathcal{R}_{t+1} - \Rfree_{t+1})\varsigma_t, \\
   m_{t+1} &=& (\mathbb{R} - \delta)k_{t+1} + \xi_{t+1}, \\
-  a_t &\geq& 0.
+  a_t &\geq& 0,
 \end{eqnarray*}
 
 \par where $\mathbb{R}$ denotes the overall return on the portfolio across periods.\footnote{The perpetual youth setting is provided for simplicity. It is straightforward to allow for portfolio choice in the life cycle setting.}
@@ -42,13 +32,23 @@ $$u(c_t, a_t) = \frac{c_{t}^{1-\rho}}{1-\rho} + \kappa \frac{(a_{t}-\underbar{a}
 
 % \par A final exercise is to rerun the exercise for wealth data other than the 2004 SCF wave. This will constitute a sort of robustness check regarding the plausibility of the estimated heterogeneity in the parameters of interest required to match the SCF data.
 
-\subsection{Financial literacy and trust}
+\subsection{Incorporating bequest motives}
 
-\par \cite{Lusardi2014} explain wealth inequality by endogenizing heterogeneous returns through the decision to invest in financial knowledge over the life cycle. Their model is motivated by empirical evidence suggesting not only that financial knowledge varies greatly among individuals of different ages and education levels, but that financial literacy may explain why some people may refuse to participate in the stock market and earn lower returns on average\footnote{\cite{Deuflhard2018} even find a statisical relationship between returns to saving accounts and financial literacy!}.
+\par The desire to leave bequests is thought to be an important reason for households to save, especially those at the top end of the wealth distribution. More generally, the following specification of additively separable wealth in the utility function\footnote{Alternative specifications, such as a non-separable utility function of consumption and wealth, may also be explored in this setting.} extends the model to accomodate these other reasons to accumulate assets:
 
-\par I would like to provide a similar extension to endogenies heterogeneous returns through differences in trust. Though there is no direct empirical evidence regarding the relationship between returns and trust, there is work by \cite{lgpslz2008} relating trust levels to a lack of participation in the stock market. Further, there is work by \cite{jbpglg2016} relating trust levels to measures of economic performance.
+$$u(c_t, a_t) = \frac{c_{t}^{1-\rho}}{1-\rho} + \kappa \frac{(a_{t}-\underbar{a})^{1-\Sigma}}{1-\Sigma}.$$
 
-My suspicion is that the role of trust can be analogous to the claim by \cite{Lusardi2014} that financial literacy is of more interest to the more educated groups since these groups are the ones which optimally save more over the life cycle. The key will be to identify how differences in trust may cause some dispersion in returns across groups, which will generate further differences in optimal wealth holdings. 
+\par \cite{ls2019} provides calibration values for $\kappa$ and $\underbar{a}$ and estimation for the elasticity parameters. However, I will need to determine what additional parameters should be estimated and what corresponding empirical moments of the data will be needed for identification.
+
+% \footnote{The paper also discusses the implications of assuming $\Sigma = \rho$ versus $\Sigma < \rho$. Incorporating the latter is a more difficult implementation in the existing code, but it is a highly desirable version of the model in order to match the empirical evidence on the saving behavior of households.}
+
+%\subsection{Financial literacy and trust}
+
+%\par \cite{Lusardi2014} explain wealth inequality by endogenizing heterogeneous returns through the decision to invest in financial knowledge over the life cycle. Their model is motivated by empirical evidence suggesting not only that financial knowledge varies greatly among individuals of different ages and education levels, but that financial literacy may explain why some people may refuse to participate in the stock market and earn lower returns on average\footnote{\cite{Deuflhard2018} even find a statisical relationship between returns to saving accounts and financial literacy!}.
+
+%\par I would like to provide a similar extension to endogenies heterogeneous returns through differences in trust. Though there is no direct empirical evidence regarding the relationship between returns and trust, there is work by \cite{lgpslz2008} relating trust levels to a lack of participation in the stock market. Further, there is work by \cite{jbpglg2016} relating trust levels to measures of economic performance.
+
+%My suspicion is that the role of trust can be analogous to the claim by \cite{Lusardi2014} that financial literacy is of more interest to the more educated groups since these groups are the ones which optimally save more over the life cycle. The key will be to identify how differences in trust may cause some dispersion in returns across groups, which will generate further differences in optimal wealth holdings. 
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
 

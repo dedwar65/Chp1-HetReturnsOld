@@ -1,0 +1,24 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Chp1proposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Chp1proposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\usepackage{color,hyperref}
+
+\begin{document}
+
+\hypertarget{deliverables}{}
+\section{Deliverables}\notinsubfile{\label{sec:deliverables}}
+%\setcounter{page}{0}\pagenumbering{arabic}
+
+\par The call for application states that applicants should specify deliverables to be completed by the end of the fellowship year. To this end, the estimation of the portfolio choice and bequest motive extensions of the model, as well as the results of the procedure, will be reported within this time frame.
+
+\par I am a team member of \href{https://econ-ark.org}{Econ-ARK}, a project whose core tenant is to offer tools which make the results of economic research as reproducible as possible. One of the main offerings of Econ-Ark in the spirit of reproducibility is the collection of \href{https://github.com/econ-ark/REMARK}{Replications and Explorations Made using the ARK} (REMARK). As a final deliverable to be acheived by the end of the fellowship year, I will provide a REMARK of the paper so that its findings can be easily replicated.  
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

@@ -8,15 +8,34 @@
 \section{Introduction}\notinsubfile{\label{sec:intro}}
 \setcounter{page}{0}\pagenumbering{arabic}
 
-\par A quantitative analysis of household finance can be accomplished using a standard framework of household decision making found in the computational heterogeneous agent (HA) macro literature. In particular, the setting is well equipped to study to the relationship between the consumption-saving behavior and income and wealth inequality.
+\par The recent heterogeneous agent (HA) macro literature has managed to construct models that are both microeconomically realistic in terms of household financial choices. Such models, either in an infinite horizon context or using a life cycle specification, are able to match measures of wealth inequality by assuming heterogeneity in time preference rates across agents (\cite{cstw2017}).
 
-\par One of the many important feautures of saving and borrowing behavior is the rate of return to assets. Reliable estimates of individual returns computed using population data in Norway by \cite{aflgdmlp20} suggest that there is substantial heterogeneity in the rate of return. This is a notable finding for the management of consumer finances: it is well known that differences in returns to assets will lead to a skewed distribution of wealth\footnote{\cite{jbab18} provide a useful survey of the wealth inequality literature.}.
+\par This literature makes the traditional assumption that all households earn the same rate of return for publicly available assets (like bank accounts or stock investments). But newly available estimates from Norwegian registry data find that, in fact, there are large differences across households in rates of return even within narrowly defined categories of assets (\cite{aflgdmlp20}). %This notable finding has implications for the management of consumer finances: it is well known that differences in returns to assets will lead to a skewed distribution of wealth\footnote{\cite{jbab18} provide a useful survey of the wealth inequality literature.}.
 
-\par The preliminary findings of this work provide some affirmation of this sentiment. A model which allows for heterogeneity in the rate of return produces a distribution of wealth which closely matches the inequality in measured wealth holdings.
+\par My research agenda is to understand both the consequences of these differences in rates of return, and their causes. Work that I've accomplished so far has found that when heterogeneity in rates of return consistent with the Norwegian data are substituted for the usual assumption of homogeneous rates of return, time preference heterogeneity is no longer necessary for such models to match the observed degree of inequality (in either the infinite horizon or the life cycle specification of the model).
 
-\par However, what is less clear are (i) the determinants of these heterogeneous returns and (ii) the quantitative effects of these determinants on wealth inequality through this returns channel. Outside of incorporating other relevant features of the household consumption-saving problem, like bequest motives and portfolio choice, the next step in this work will be to provide answers to (i) and (ii). Two insights from the literature which I would like to explore to acomplish this are \textit{financial literacy} and \textit{trust in financial institutions}.
+% \par The preliminary findings of this work provide affirmation of this sentiment. Allowing for heterogeneity in the rate of return produces a distribution of wealth which closely matches the inequality in wealth holdings measured in the Survey of Consumer Finances (SCF).
 
-\par This proposal will outline the aforementioned preliminary results. Then I discuss the proposed extensions of the model in detail. The completion of these extensions will result in a finalized, deliverable version of this paper.
+\par My agenda if I were to receive the NBER fellowship would be to:
+\begin{itemize}
+\item incorporate standard portfolio choice between a risky and a safe asset with heterogeneity in returns consistent with the more detailed findings of the Norwegian data.
+  \begin{itemize}
+    \item I am confident that adding portfolio choice will not change the fact that rate of return heterogeneity is sufficient to account for observed inequality.
+  \end{itemize}
+\item add a bequest motive in which bequests are a luxury good. I anticipate that this will allow the model to even match the extreme upper tail of the wealth distribution which the life cycle model does not fit very well in the current specification.
+\item begin work aimed at understanding the root causes of rate of return heterogeneity.
+  \begin{itemize}
+  \item This will build on work by \href{https://econ.jhu.edu/directory/mateo-velasquez-giraldo/}{Mateo Velasquez-Giraldo (2023)} which finds that there is a great deal of heterogeneity in households beliefs about rates of return.
+  \item It will also build on work by Luigi Guiso (in \cite{lgpslz2008} and a number of other papers with various coauthors) emphasizing the importance of differences in trust across households. Low trust households are unlikely to save or invest their savings in risky assets. My aim will be to explore whether differences in believed rates of return are explained by differences in the degree of trust and then to examine hypotheses about the origins of these differences in trust.
+  \item I anticipate that this work will connect to the growing literature about differences in economic behavior that appear to correspond to cultural or historical origins of the economic agents (Raquel Fernandez has been a leading figure in this literature; see \cite{Fernandez2011} for an extensive review).
+    \item Such a connection between trust and the rate of return has the potential to be consistent with results of \cite{Das2019}, which find that low SES households are more pessimistic about rates of return that they can earn on publicly traded financial assets.
+    \end{itemize}
+\end{itemize}
+
+
+%\par However, what is less clear are (i) the determinants of these heterogeneous returns and (ii) the quantitative effects of these determinants on wealth inequality through this returns channel. After incorporating other relevant features of the household consumption-saving problem, like bequest motives and portfolio choice, a key step in this work will be to provide answers to (i) and (ii). Two insights from the literature which I would like to explore to acomplish this are \textit{financial literacy} and \textit{trust in financial institutions}.
+
+%\par This proposal will outline the aforementioned preliminary results. Then I discuss the proposed extensions of the model in detail. The completion of these extensions will result in a finalized, deliverable version of this paper.
 
 
 \onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
