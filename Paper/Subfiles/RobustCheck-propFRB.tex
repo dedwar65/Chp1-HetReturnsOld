@@ -1,0 +1,24 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Chp1proposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Chp1proposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\hypertarget{extensions}{}
+\section{Robustness Checks}\notinsubfile{\label{sec:robustness}}
+%\setcounter{page}{0}\pagenumbering{arabic}
+
+
+
+
+
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput

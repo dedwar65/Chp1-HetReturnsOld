@@ -1,0 +1,5 @@
+% -*- mode: LaTeX; TeX-PDF-mode: t; -*- 
+\subfile{Subfiles/Intro-propFRB}
+\subfile{Subfiles/Model-propFRB}
+\subfile{Subfiles/ModelLC-propFRB}
+\subfile{Subfiles/RobustCheck-propFRB}

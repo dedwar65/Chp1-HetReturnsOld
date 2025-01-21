@@ -1,0 +1,25 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Chp1proposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Chp1proposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\hypertarget{Introduction}{}
+\section{Introduction}\notinsubfile{\label{sec:intro}}
+\setcounter{page}{0}\pagenumbering{arabic}
+
+\par The recent heterogeneous agent (HA) macro literature has managed to construct models that are both microeconomically realistic in terms of household financial choices. Such models, either in an infinite horizon context or using a life cycle specification, are able to match measures of wealth inequality by assuming heterogeneity in time preference rates across agents (\cite{cstw2017}).
+
+\par This literature makes the traditional assumption that all households earn the same rate of return for publicly available assets (like bank accounts or stock investments). But newly available estimates from Norwegian registry data find that, in fact, there are large differences across households in rates of return even within narrowly defined categories of assets (\cite{aflgdmlp20}). %This notable finding has implications for the management of consumer finances: it is well known that differences in returns to assets will lead to a skewed distribution of wealth\footnote{\cite{jbab18} provide a useful survey of the wealth inequality literature.}.
+
+\par My research agenda is to understand both the consequences of these differences in rates of return, and their causes. Work that I've accomplished so far has found that when heterogeneity in rates of return consistent with the Norwegian data are substituted for the usual assumption of homogeneous rates of return, time preference heterogeneity is no longer necessary for such models to match the observed degree of inequality (in either the infinite horizon or the life cycle specification of the model).
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput
