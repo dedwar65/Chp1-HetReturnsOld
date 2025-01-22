@@ -47,15 +47,13 @@ where I denote $a_t$ as assets, $m_t$ as market resources, $k_t$ as capital, and
 
 \subsubsection{Incorporating heterogeneous returns}
 
-\par As noted above, recent studies by \cite{aflgdmlp20} and \cite{lblcps18} have not only estimated the rate of return on asset holdings but have also uncovered significant heterogeneity across households. Given this motivation, the next estimation (the R-dist model) assumes the existence of multiple types of agents, each earning a distinct rate of return on their assets.
+\par As noted above, recent studies by \cite{aflgdmlp20} and \cite{lblcps18} have not only estimated the rate of return on asset holdings but have also uncovered significant heterogeneity across households. With this in mind, the next estimation (the R-dist model) assumes the existence of multiple types of agents, each earning a distinct rate of return on their assets.
 
-\par I follow closely the procedure outlined by \cite{cstw2017} Specifically, I assume that different types of households have a time preference factor drawn uniformly from the interval $(\grave{\Rfree} - \nabla, \grave{\Rfree} + \nabla)$, where $\nabla$ represents the level of dispersion. Afterward, the model is simulated to estimate the values of both $\grave{\Rfree}$ and $\nabla$ so that the model matches the inequality in the wealth distribution. To achieve this, the following minimization problem is solved:
+\par I follow closely the procedure outlined by \cite{cstw2017}. Specifically, I assume that different types of households have a time preference factor drawn from a uniform distribution on the interval $(\grave{\Rfree} - \nabla, \grave{\Rfree} + \nabla)$, where $\nabla$ represents the level of dispersion. Afterward, the model is simulated to estimate the values of both $\grave{\Rfree}$ and $\nabla$ so that the model matches the inequality in the wealth distribution. To achieve this, the following minimization problem is solved:
 
 $$ \{\grave{\Rfree}, \nabla\} = \text{arg}\min_{\Rfree, \nabla} \bigg( \sum_{i=20, 40, 60, 80} (w_{i}(\Rfree, \nabla)-\omega_i )^{2} \bigg)^{\frac{1}{2}} $$
 
-\par subject to the constraint that the aggregate capital-to-output ratio in this model matches that of the perfect foresight setting:
-
-$$ \frac{K}{Y} = \frac{K_{PF}}{Y_{PF}}. $$
+\par subject to the constraint that the aggregate capital-to-output ratio in this model matches the calibrated value from the previous table of $10.26$.
 
 \par Note that $w_i$ and $\omega_i$ give the porportion of total aggregate net worth held by the top $i$ percent in the model and in the data, respectively.
 
