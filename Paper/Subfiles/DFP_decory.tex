@@ -1,0 +1,33 @@
+\input{./econtexRoot.texinput}
+\documentclass[\econtexRoot/Chp1proposal]{subfiles}
+\onlyinsubfile{\externaldocument{\econtexRoot/Chp1proposal}} % Get xrefs -- esp to apndx -- from main file; only works if main file has already been compiled
+
+\begin{document}
+
+\hypertarget{Introduction}{}
+\section{Description and Contribution}\notinsubfile{\label{sec:intro}}
+\setcounter{page}{0}\pagenumbering{arabic}
+
+\par My research agenda is to understand the distribution of wealth and inequality in the U.S. Skewness in the distribution of wealth across individuals have been documented across time and countries for centuries. Of the many explanations proposed for this inequality in wealth, in the first chapter of my dissertation I focus on differences in rates of return across households as a key factor in determining the distribution. Work that I've accomplished so far has found that estimating a distribution of returns across households in a standard heterogeneous agent setting is not only able to match wealth data in the U.S., but the estimated distribution is not far from the empirical one measured in the Norwegian study.
+
+\par After taking note of this finding that individuals may differ significantly in the returns earned on their assets, the second chapter of my dissertation will be an attempt at describing the empirical relationship between returns and trust. There is literature describing the statistical relationship between measures of economic performance and levels of trust. I would like to perform a similar exercise with a measure of returns from the PSID as the dependent variable to see if trust can play a significant role in this setting as well.
+
+\par The third chapter of my dissertation will take a look at wealth inequality from a different perspective, by describing theoretical measures of wealth inequality. Theoretical results from decision theory which describe how to formalize rankings of distribution have been leveraged to produce measures of inequality for distributions of both income and wealth. I would like to motivate a particular method of ranking distributions in the context of wealth, and then use the theory to see what measure of inequality is consistent with that method of ranking. 
+
+
+\section{Plan for Completion}
+
+The most immediate step for completion by Spring 2026 is to focus on finishing my job market paper. The most substantive addition remaining is to see how much my estimates for the optimal rate of return (with and without heterogeneity) changes for other plausible values for other parameters of interest to the consumption-saving problem.
+
+\par After this, I need to make progress on the second and third chapters of my dissertation. As of now, this seems like it will take the most of my time in my sixth year. Although I have an idea of what research question I would like to answer in my second chapter, I have run into some small issues with computing the rate of return using recent data from the PSID. If this becomes unfruitful, then I will need to pivot by proposing and answering a different research question. Lastly, the third chapter needs to be revisited and polished up. If time permits, I would also like to incorporate the use of some data there since my first chapter already uses wealth data from the SCF. The plan is to complete this no later than Spring 2026.
+
+
+
+\onlyinsubfile{\input{\LaTeXInputs/bibliography_blend}}
+
+\ifthenelse{\boolean{Web}}{}{
+  \onlyinsubfile{\captionsetup[figure]{list=no}}
+  \onlyinsubfile{\captionsetup[table]{list=no}}
+}
+
+\end{document} \endinput
